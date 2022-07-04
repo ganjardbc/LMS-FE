@@ -1,4 +1,4 @@
-# lms-ui
+# LMS-FE
 
 > learning management system
 

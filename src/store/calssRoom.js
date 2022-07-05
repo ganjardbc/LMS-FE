@@ -6,7 +6,7 @@ export default {
     state: {
         isGridView: true,
         formFilter : {
-            select: '',
+            select: 'ALL',
             search: ''
         },
         data: [

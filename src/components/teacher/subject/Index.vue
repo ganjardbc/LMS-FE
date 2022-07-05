@@ -4,7 +4,7 @@
             <div class="fonts fonts-32 semibold black">Mata Pelajaran</div>
             <div class="display-flex space-between align-center padding padding-top-15px padding-bottom-15px">
                 <div class="width width-40 display-flex">
-                    <el-input placeholder="Cari kelas" v-model="form.search" class="input-with-select">
+                    <el-input placeholder="Cari kelas" v-model="form.search" class="subject-input-with-select">
                         <el-select v-model="form.select" slot="prepend" placeholder="Jenjang">
                             <el-option label="SMA" value="1"></el-option>
                             <el-option label="SMP" value="2"></el-option>
@@ -86,10 +86,10 @@ export default {
 }
 </script>
 <style>
-    .el-select .el-input {
+    .subject-input-with-select .el-select .el-input {
         width: 110px;
     }
-    .input-with-select .el-input-group__prepend {
+    .subject-input-with-select .el-input-group__prepend {
         background-color: #fff;
     }
 </style>

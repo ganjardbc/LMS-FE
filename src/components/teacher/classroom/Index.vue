@@ -4,10 +4,11 @@
             <div class="fonts fonts-32 semibold black">Ruang Kelas</div>
             <div class="display-flex space-between align-center padding padding-top-15px padding-bottom-15px">
                 <div class="width width-40 display-flex">
-                    <el-input placeholder="Cari kelas" v-model="formFilter.search" class="input-with-select">
+                    <el-input placeholder="Cari kelas" v-model="formFilter.search" class="classroom-input-with-select">
                         <el-select v-model="formFilter.select" slot="prepend" placeholder="Jenjang">
-                            <el-option label="SMA" value="1"></el-option>
-                            <el-option label="SMP" value="2"></el-option>
+                            <el-option label="Semua Jenjang" value="ALL"></el-option>
+                            <el-option label="SMA" value="SMA"></el-option>
+                            <el-option label="SMP" value="SMP"></el-option>
                         </el-select>
                         <el-button slot="append" icon="el-icon-search"></el-button>
                     </el-input>
@@ -92,10 +93,10 @@ export default {
 }
 </script>
 <style>
-    .el-select .el-input {
-        width: 110px;
+    .classroom-input-with-select .el-select .el-input {
+        width: 150px;
     }
-    .input-with-select .el-input-group__prepend {
+    .classroom-input-with-select .el-input-group__prepend {
         background-color: #fff;
     }
 </style>

@@ -1,18 +1,18 @@
 export default {
-  namespaced: true,
-  state: {
-    authenticated: false,
-    authMessage: '',
-    form: {
-      username: '',
-      password: ''
+    namespaced: true,
+    state: {
+        authenticated: false,
+        authMessage: '',
+        form: {
+            username: '',
+            password: ''
+        },
+        errorMessage: {
+            username: '',
+            password: ''
+        }
     },
-    errorMessage: {
-      username: '',
-      password: ''
-    }
-  },
-  getters: {},
-  mutations: {},
-  actions: {}
+    getters: {},
+    mutations: {},
+    actions: {}
 }

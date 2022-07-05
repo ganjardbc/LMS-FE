@@ -28,33 +28,23 @@ a {
         color: $grey !important;
         border-color: $grey !important;
     }
-    .notif {
-        position: absolute;
-        top: 0;
-        right: 0;
-        font-size: 11px;
-        width: 18px;
-        height: 18px;
-        line-height: 20px;
+    &.btn-circle {
         border-radius: 100%;
-        background-color: $red;
-        color: #fff;
+        width: 43px;
+        height: 43px;
+        padding: 0 0;
     }
-    .icon {
-        margin-right: 8px;
-        font-size: 18px;
+    &.btn-left {
+        justify-content: flex-start;
+        align-items: center;
     }
-    .icn {
-        margin-top: 2px;
-        font-size: 13px;
-        &.icn-left {
-            margin-left: 0;
-            margin-right: 8px;
-        }
-        &.icn-right {
-            margin-left: 8px;
-            margin-right: 0;
-        }
+    &.btn-right {
+        justify-content: flex-end;
+        align-items: center;
+    }
+    &.btn-center {
+        justify-content: center;
+        align-items: center;
     }
     &.btn-main {
         background-color: $main-color;
@@ -106,11 +96,11 @@ a {
         }
     }
     &.btn-danger {
-        background-color: #fff;
-        color: $red;
+        background-color: $red;
+        color: #fff;
         border: 1px $red solid;
         &:hover {
-            background-color: $white-grey;
+            background-color:rgba($color: $red, $alpha: 0.7);
         }
     }
     &.btn-sekunder:focus {
@@ -120,7 +110,8 @@ a {
         background-color: rgba($color: #000000, $alpha: 0);
         color: $black;
         &:hover {
-            background-color: $white-grey;
+            background-color: $main-color;
+            color: $white;
         }
     }
     &.btn-grey {
@@ -197,6 +188,9 @@ a {
     &.btn-full {
         width: 100%;
     }
+    &.btn-full-padding {
+        width: calc(100% - 24.16px);
+    }
     &.btn-no-hover {
         &:hover {
             cursor: default;
@@ -215,6 +209,36 @@ a {
         &:hover {
             background-color: #f0f0f0;
             border: 1px #f0f0f0 solid;
+        }
+    }
+    .notif {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 11px;
+        width: 18px;
+        height: 18px;
+        line-height: 20px;
+        border-radius: 100%;
+        background-color: $red;
+        color: #fff;
+    }
+    .icon {
+        margin-right: 8px;
+        font-size: 18px;
+    }
+    .icn {
+        width: 15px;
+        text-align: center;
+        margin-top: 2px;
+        font-size: 13px;
+        &.icn-left {
+            margin-left: 0;
+            margin-right: 8px;
+        }
+        &.icn-right {
+            margin-left: 8px;
+            margin-right: 0;
         }
     }
     &.btn-mobile {

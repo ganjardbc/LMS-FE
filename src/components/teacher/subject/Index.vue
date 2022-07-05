@@ -5,7 +5,7 @@
             <div class="display-flex space-between align-center padding padding-top-15px padding-bottom-15px">
                 <div class="width width-40 display-flex">
                     <el-input placeholder="Cari kelas" v-model="form.search" class="input-with-select">
-                        <el-select v-model="select" slot="prepend" placeholder="Jenjang">
+                        <el-select v-model="form.select" slot="prepend" placeholder="Jenjang">
                             <el-option label="SMA" value="1"></el-option>
                             <el-option label="SMP" value="2"></el-option>
                         </el-select>
@@ -50,60 +50,38 @@
                 </div>
             </div>
             <div class="display-flex left wrap">
-                <!-- <div class="width width-row-4">
-                    <div class="padding padding-15px">
-                        <div 
-                            class="card card-main box-shadow display-flex column center align-center" 
-                            style="height: 300px;">
-                            <div class="display-flex column center align-center">
-                                <div class="padding padding-bottom-25px">
-                                    <i class="fonts fonts-32 white fa fa-lg fa-plus-circle"></i>
-                                </div>
-                                <div class="fonts fonts-11 white semibold align-center">Tambah Mata Pelajaran</div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
                 <div 
                     v-for="(dt, i) in classRoom" 
                     :key="i"
                     class="width width-row-4">
-                    <div class="padding padding-15px">
-                        <div class="card bg-white box-shadow">
-                            <div 
-                                class="image image-padding bg-size-contain bg-white"
-                                :style="`background-image: url(${dt.image});`"
-                                ></div>
-                            <div class="display-flex column align-center padding padding-top-15px">
-                                <div class="fonts fonts-11 black semibold align-center margin margin-bottom-5px">{{ dt.title }}</div>
-                                <div class="display-flex row center margin margin-bottom-15px">
-                                    <div class="fonts fonts-10 normal grey"><span class="fonts fonts-10 semibold main">{{ dt.subject }}</span> Materi</div>
-                                </div>
-                                <button class="btn btn-sekunder btn-full">
-                                    Kelola Mata Pelajaran
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    <Card :data="dt" />
                 </div>
             </div>
         </div>
     </div>
 </template>
 <script>
-import classRoomImage from '../../../assets/img/classroom.jpeg'
+import classRoomImage from '../../../assets/img/classroom.jpg'
+import Card from './components/Card'
 export default {
     data () {
         return {
             form : {
+                select: '',
                 search: ''
             },
             classRoom: [
                 {id: 1, image: classRoomImage, title: 'Matematika', subject: '15'},
                 {id: 2, image: classRoomImage, title: 'B. Inggris', subject: '23'},
-                {id: 3, image: classRoomImage, title: 'B. Indonesia', subject: '77'}
+                {id: 3, image: classRoomImage, title: 'B. Indonesia', subject: '77'},
+                {id: 4, image: classRoomImage, title: 'Matematika', subject: '15'},
+                {id: 5, image: classRoomImage, title: 'B. Inggris', subject: '23'},
+                {id: 6, image: classRoomImage, title: 'B. Indonesia', subject: '77'}
             ],
         }
+    },
+    components: {
+        Card
     }
 }
 </script>

@@ -37,6 +37,9 @@
     &.primary {
         color: $main-color
     }
+    &.tertiary {
+        color: $tertiary-color;
+    }
     &.black {
         color: $black;
     }

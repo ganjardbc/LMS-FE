@@ -4,7 +4,7 @@
             width: #{$var} + 'px';
         }
     }
-    @for $var from 0 to 100 {
+    @for $var from 0 to 200 {
         &.width-#{$var} {
             width: #{$var} + '%';
         }

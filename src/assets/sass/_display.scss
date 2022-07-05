@@ -10,6 +10,12 @@
     &.space-between {
         justify-content: space-between;
     }
+    &.flex-end {
+        justify-content: flex-end;
+    }
+    &.flex-start {
+        justify-content: flex-start;
+    }
     &.right {
         justify-content: flex-end;
     }
@@ -27,6 +33,9 @@
     }
     &.align-center {
         align-items: center;
+    }
+    &.align-left {
+        align-items: flex-start;
     }
     &.align-right {
         justify-content: flex-end;

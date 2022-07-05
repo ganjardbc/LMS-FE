@@ -9,19 +9,49 @@
                 :key="index" 
                 :class="'ml-list ' + (enableGridView ? 'fixed-column-3' : '')"
             >
-                <router-link :to="{name: dt.link}" class="ml-link" :title="dt.label">
-                    <div class="ml-icon">
-                        <i :class="dt.icon" />
-                    </div>
-                    <div class="ml-label">
-                        {{ dt.label }}
-                    </div>
-                    <div class="val-container">
-                        <div v-if="dt.value > 0" class="ml-value">
-                            <div class="post-center">{{ dt.value }}</div>
+                <el-tooltip 
+                    class="item" 
+                    effect="dark" 
+                    :content="dt.label" 
+                    placement="right">
+                    <router-link 
+                        :to="{name: dt.link}" 
+                        class="ml-link">
+                        <div class="ml-icon">
+                            <i :class="dt.icon" />
                         </div>
-                    </div>
-                </router-link>
+                        <div class="ml-label">
+                            {{ dt.label }}
+                        </div>
+                        <div class="val-container">
+                            <div v-if="dt.value > 0" class="ml-value">
+                                <div class="post-center">{{ dt.value }}</div>
+                            </div>
+                        </div>
+                    </router-link>
+                </el-tooltip>
+                <!-- <el-popover
+                    placement="right"
+                    width="100"
+                    trigger="hover">
+                    <div class="fonts fonts-11 normal black">{{ dt.label }}</div>
+                    <router-link 
+                        slot="reference"
+                        :to="{name: dt.link}" 
+                        class="ml-link">
+                        <div class="ml-icon">
+                            <i :class="dt.icon" />
+                        </div>
+                        <div class="ml-label">
+                            {{ dt.label }}
+                        </div>
+                        <div class="val-container">
+                            <div v-if="dt.value > 0" class="ml-value">
+                                <div class="post-center">{{ dt.value }}</div>
+                            </div>
+                        </div>
+                    </router-link>
+                </el-popover> -->
             </li>
         </ul>
     </div>

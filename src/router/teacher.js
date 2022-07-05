@@ -3,6 +3,7 @@ import Home from '@/components/teacher/Index.vue'
 import ClassRoom from '@/components/teacher/classroom/Index.vue'
 import ClassDetail from '@/components/teacher/classroom/Detail.vue'
 import Subject from '@/components/teacher/subject/Index.vue'
+import SubjectDetail from '@/components/teacher/subject/Detail.vue'
 
 const routes = {
     path: '/teacher',
@@ -27,6 +28,11 @@ const routes = {
             name: 'teacher-subject',
             path: '/teacher-subject',
             component: Subject
+        },
+        {
+            name: 'teacher-subject-detail',
+            path: '/teacher-subject/detail/:id',
+            component: SubjectDetail
         }
     ]
 }

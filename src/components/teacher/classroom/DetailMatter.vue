@@ -34,12 +34,12 @@
                 </button>
             </div>
         </div>
-        <CardSubject :isGridView.sync="isGridView" :data.sync="classRoom" />
+        <CardMatter :isGridView.sync="isGridView" :data.sync="data" />
     </div>
 </template>
 <script>
 import { mapState, mapActions } from 'vuex'
-import CardSubject from './components/CardSubject.vue'
+import CardMatter from '../../modules/CardMatter'
 export default {
     name: 'App',
     data () {
@@ -55,7 +55,7 @@ export default {
         isGridView () {
             return this.detailSubject.isGridView
         },
-        classRoom () {
+        data () {
             return this.detailSubject.data 
         }
     },
@@ -68,7 +68,7 @@ export default {
         }
     },
     components: {
-        CardSubject
+        CardMatter
     }
 }
 </script>

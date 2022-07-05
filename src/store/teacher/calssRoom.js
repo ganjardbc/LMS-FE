@@ -1,5 +1,5 @@
-import classRoomImage from '../assets/img/classroom.jpg'
-import classRoomImage3 from '../assets/img/classroom-3.jpeg'
+import classRoomImage from '../../assets/img/classroom.jpg'
+import classRoomImage3 from '../../assets/img/classroom-3.jpeg'
 
 export default {
     namespaced: true,

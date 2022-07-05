@@ -12,8 +12,7 @@
                                 class="image image-half-padding bg-size-contain bg-white"
                                 :style="`background-image: url(${cover});`"></div>
                         </div>
-                        <div class="fonts fonts-16 semibold black">SMA Kelas 3</div>
-                        <div class="fonts fonts-11 normal grey">Jenjang SMA</div>
+                        <div class="fonts fonts-16 semibold black">Matematika</div>
                         <div class="card-capsule active margin margin-10px">
                             <i class="icn fonts fonts-6 green fa fa-lw fa-circle"></i> Active
                         </div>
@@ -25,7 +24,7 @@
                         </div>
                         <div class="width width-100 padding padding-bottom-15px">
                             <button class="btn btn-sekunder btn-full">
-                                Edit Ruang Kelas
+                                Edit Mata Pelajaran 
                             </button>
                             <button class="btn btn-grey btn-full" style="margin-top: 15px;">
                                 Hapus
@@ -34,57 +33,37 @@
                     </div>
                 </div>
                 <div class="width width-67">
-                    <AppTabs 
-                        :isScrollable="false"
-                        :selectedIndex.sync="activeTabs" 
-                        :data="tabs" 
-                        :onChange="(data) => onChangeTabs(data)" 
-                        class="width width-48 margin margin-bottom-15-px" />
-                    <DetailMatter v-if="activeTabs === 0" />
-                    <DetailStudent v-if="activeTabs === 1" />
+                    <DetailSubject />
                 </div>
             </div>
         </div>
     </div>
 </template>
 <script>
-import classRoomImage from '../../../assets/img/classroom-3.jpeg'
+import classRoomImage from '../../../assets/img/classroom.jpg'
 import AppBreadcrumps from '../../modules/AppBreadcrumps'
-import AppTabs from '../../modules/AppTabs'
-import DetailMatter from './DetailMatter'
-import DetailStudent from './DetailStudent'
+import DetailSubject from './DetailSubject'
 export default {
     data () {
         return {
-            activeTabs: 0,
             cover: classRoomImage,
-            form : {
-                search: ''
-            },
-            tabs: [
-                {label: 'Materi Ajar', status: 'active'},
-                {label: 'Daftar Murid', status: ''}
-            ],
             dashboard: [
-                {id: 2, icon: 'fa fa-lg fa-book-open', title: 'Jumlah Materi', value: '23'},
-                {id: 3, icon: 'fa fa-lg fa-graduation-cap', title: 'Jumlah Murid', value: '77'}
+                {id: 2, icon: 'fa fa-lg fa-book-open', title: 'Materi Ajar', value: '23'}
             ]
         }
     },
     components: {
         AppBreadcrumps,
-        AppTabs,
-        DetailMatter,
-        DetailStudent
+        DetailSubject
     },
     computed: {
-        classRoomId () {
+        subjectId () {
             return this.$route.params.id
         },
         breadcrumps () {
             return [
-                {title: 'Ruang Kelas', active: false},
-                {title: this.classRoomId, active: true},
+                {title: 'Mata Pelajaran', active: false},
+                {title: this.subjectId, active: true},
             ]
         }
     },

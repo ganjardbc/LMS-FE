@@ -10,7 +10,7 @@
                         class="image image-60px bg-size-contain bg-white margin margin-right-15px"
                         :style="`background-image: url(${dt.image});`"
                         ></div>
-                    <div style="width: calc(100% - 225px);">
+                    <div style="width: calc(100% - 235px);">
                         <div class="fonts fonts-11 black semibold">{{ dt.title }}</div>
                         <div class="fonts fonts-10 black normal">{{ dt.description }}</div>
                         <div class="display-flex flex-left">
@@ -19,14 +19,14 @@
                             <div class="fonts fonts-10 normal grey"><span class="fonts fonts-10 semibold primary">{{ dt.student }}</span> Murid</div>
                         </div>
                     </div>
-                    <div class="width width-150px display-flex flex-end align-center">
+                    <div class="width width-160px display-flex flex-end align-center">
                         <div class="card-capsule active margin margin-right-15px">
                             <i class="icn fonts fonts-6 green fa fa-lw fa-circle"></i> Active
                         </div>
                         <button 
-                            class="btn btn-circle btn-transparent"
+                            class="btn btn-sekunder"
                             @click="toViewDetail">
-                            <i class="icn fa fa-lg fa-cog"></i>
+                            Kelola
                         </button>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
                         <button 
                             class="btn btn-sekunder btn-full"
                             @click="toViewDetail">
-                            Kelola Kelas
+                            Kelola Ruang Kelas
                         </button>
                     </div>
                 </div>

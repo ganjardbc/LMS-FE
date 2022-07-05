@@ -4,8 +4,8 @@
 set -e
 
 # remove folder
-rm -rf dist
-rm -rf docs 
+rm -rf dist/
+rm -rf docs/
 
 # build
 npm run build

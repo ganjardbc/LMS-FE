@@ -62,7 +62,7 @@ export default {
     },
     methods: {
         toViewDetail () {
-            this.$router.push({name: 'teacher-subject-detail', params: {id: 'CR-00000000001'}})
+            this.$router.push({name: 'teacher-subject-detail', params: {id: 'SB-00000000001'}})
         }
     }
 }

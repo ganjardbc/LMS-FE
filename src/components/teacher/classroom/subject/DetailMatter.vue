@@ -39,7 +39,7 @@
 </template>
 <script>
 import { mapState, mapActions } from 'vuex'
-import CardMatter from '../../modules/CardMatter'
+import CardMatter from './components/CardMatter'
 export default {
     name: 'App',
     data () {
@@ -47,7 +47,7 @@ export default {
     },
     computed: {
         ...mapState({
-            detailSubject: state => state.teacherSubject.detail.subject
+            detailSubject: state => state.teacherClassRoom.detail.matter
         }),
         formFilter () {
             return this.detailSubject.formFilter
@@ -61,10 +61,10 @@ export default {
     },
     methods: {
         ...mapActions({
-            onChangeSubjectGridView: 'teacherSubject/onChangeSubjectGridView'
+            onChangeMattertGridView: 'teacherClassRoom/onChangeMattertGridView'
         }),
         changeGridView () {
-            this.onChangeSubjectGridView(!this.isGridView)
+            this.onChangeMattertGridView(!this.isGridView)
         }
     },
     components: {

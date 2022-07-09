@@ -1,19 +1,19 @@
 <template>
     <div id="app">
         <div class="width width-100">
-            <div class="fonts fonts-32 semibold black">Mata Pelajaran</div>
+            <div class="fonts fonts-32 semibold black">Materi Ajar</div>
             <div class="display-flex space-between align-center padding padding-top-15px padding-bottom-15px">
-                <div class="width width-40 display-flex">
-                    <el-input placeholder="Cari mata pelajaran" v-model="formFilter.search" class="subject-input-with-select">
-                        <el-select v-model="formFilter.select" slot="prepend" placeholder="Jenjang">
+                <div class="width width-30 display-flex">
+                    <el-input placeholder="Cari materi ajar" v-model="formFilter.search" class="subject-input-with-select">
+                        <!-- <el-select v-model="formFilter.select" slot="prepend" placeholder="Jenjang">
                             <el-option label="Semua Jenjang" value="ALL"></el-option>
                             <el-option label="SMA" value="SMA"></el-option>
                             <el-option label="SMP" value="SMP"></el-option>
-                        </el-select>
+                        </el-select> -->
                         <el-button slot="append" icon="el-icon-search"></el-button>
                     </el-input>
                 </div>
-                <div class="width width-60 display-flex right">
+                <div class="width width-70 display-flex right">
                     <button 
                         slot="reference"
                         class="btn btn-sekunder" 
@@ -50,7 +50,7 @@
                         </button>
                     </el-popover>
                     <button class="btn btn-main" style="margin-left: 5px;">
-                        <i class="icn icn-left fa fa-lg fa-plus-circle"></i> Tambah Mata Pelajaran
+                        <i class="icn icn-left fa fa-lg fa-plus-circle"></i> Upload Materi Ajar
                     </button>
                 </div>
             </div>
@@ -67,7 +67,7 @@ export default {
     },
     computed: {
         ...mapState({
-            subject: state => state.subject
+            subject: state => state.teacherSubject
         }),
         formFilter () {
             return this.subject.formFilter
@@ -81,7 +81,7 @@ export default {
     },
     methods: {
         ...mapActions({
-            onChangeGridView: 'subject/onChangeGridView'
+            onChangeGridView: 'teacherSubject/onChangeGridView'
         }),
         changeGridView () {
             this.onChangeGridView(!this.isGridView)

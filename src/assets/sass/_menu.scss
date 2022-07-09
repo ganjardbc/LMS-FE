@@ -175,11 +175,11 @@
                 }
                 &:hover {
                     border-radius: 8px;
+                    background-color: #fff;
                 }
             }
             .router-link-active {
-                background-color: #fff;
-                // box-shadow: $shadow;
+                background-color: #f9f9f9;
                 .ml-icon {
                     color: $main-color;
                 }

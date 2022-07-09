@@ -433,9 +433,6 @@ a.btn {
   margin-top: 0;
 }
 .btn.btn-radius {
-  border-radius: 4px;
-}
-.btn.btn-small-radius {
   border-radius: 40px;
 }
 .btn.btn-full {
@@ -970,9 +967,10 @@ a.btn {
 }
 .menu-list.with-big-icon .ml-list .ml-link:hover {
   border-radius: 8px;
+  background-color: #fff;
 }
 .menu-list.with-big-icon .ml-list .router-link-active {
-  background-color: #fff;
+  background-color: #f9f9f9;
 }
 .menu-list.with-big-icon .ml-list .router-link-active .ml-icon {
   color: #409EFF;
@@ -1480,6 +1478,10 @@ a.btn {
   position: relative;
   width: 100%;
   max-height: 200px;
+  overflow-y: auto;
+}
+.card .card-content-max {
+  height: 400px;
   overflow-y: auto;
 }
 
@@ -77162,7 +77164,7 @@ a {
   position: fixed;
   bottom: 0;
   left: 0;
-  width: 180px;
+  width: 120px;
   height: 100vh;
   z-index: 100;
   background-color: #fff;
@@ -77271,7 +77273,7 @@ a {
 }
 #admin .main .main-header .main-header-container {
   position: fixed;
-  width: calc(100% - 290px);
+  width: calc(100% - 230px);
   height: 60px;
   padding: 0 15px;
   background-color: #fff;
@@ -77284,9 +77286,9 @@ a {
 #admin .main .main-content {
   position: relative;
   right: 0;
-  width: calc(100% - 260px);
-  padding: 40px;
-  padding-left: 220px;
+  width: calc(100% - 200px);
+  padding: 25px 40px;
+  padding-left: 160px;
 }
 @media (max-width: 720px) {
   #admin .main .main-content {
@@ -77414,7 +77416,7 @@ a {
 }
 #admin .left-form {
   position: relative;
-  width: calc(100% - 400px);
+  width: calc(100% - 380px);
 }
 @media (max-width: 720px) {
   #admin .left-form {
@@ -77425,11 +77427,10 @@ a {
   position: fixed;
   top: 0;
   right: 0;
-  width: 400px;
+  width: 380px;
   height: 100vh;
-  border-left: 1px solid rgba(0, 0, 0, 0.1);
   background-color: #fff;
-  z-index: 100;
+  z-index: 10;
 }
 @media (max-width: 720px) {
   #admin .right-form {

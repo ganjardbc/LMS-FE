@@ -45,13 +45,6 @@
                                 @click="onLogin">
                                 Login <i class="icn icn-right fa fa-lg fa-sign-in-alt"></i>
                             </button>
-                            <button class="btn btn-sekunder btn-full">
-                                Daftar Pengguna
-                            </button>
-                            <!-- <el-button 
-                                type="primary" 
-                                style="width: 100%;"
-                                @click="onLogin">LOGIN</el-button> -->
                         </div>
                     </div>
                 </div>

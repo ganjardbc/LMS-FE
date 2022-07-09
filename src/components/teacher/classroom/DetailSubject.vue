@@ -1,9 +1,9 @@
 <template>
     <div id="App">
-        <div class="fonts fonts-32 semibold black">Materi Ajar</div>
+        <div class="fonts fonts-32 semibold black">Mata Pelajaran</div>
         <div class="display-flex space-between align-center padding padding-top-15px padding-bottom-15px">
             <div class="width width-40 display-flex">
-                <el-input placeholder="Cari materi ajar" v-model="formFilter.search" class="input-with-select">
+                <el-input placeholder="Cari mata pelajaran" v-model="formFilter.search" class="input-with-select">
                     <el-button slot="append" icon="el-icon-search"></el-button>
                 </el-input>
             </div>
@@ -29,17 +29,17 @@
                         <i class="icn icn-left fa fa-lg fa-filter"></i> Filter
                     </button>
                 </el-popover>
-                <button class="btn btn-main" style="margin-left: 5px;">
+                <!-- <button class="btn btn-main" style="margin-left: 5px;">
                     <i class="icn icn-left fa fa-lg fa-plus-circle"></i> Tambah
-                </button>
+                </button> -->
             </div>
         </div>
-        <CardMatter :isGridView.sync="isGridView" :data.sync="data" />
+        <CardSubject :isGridView.sync="isGridView" :data.sync="data" />
     </div>
 </template>
 <script>
 import { mapState, mapActions } from 'vuex'
-import CardMatter from '../../modules/CardMatter'
+import CardSubject from './components/CardSubject'
 export default {
     name: 'App',
     data () {
@@ -47,7 +47,7 @@ export default {
     },
     computed: {
         ...mapState({
-            detailSubject: state => state.classRoom.detail.subject
+            detailSubject: state => state.teacherClassRoom.detail.subject
         }),
         formFilter () {
             return this.detailSubject.formFilter
@@ -61,14 +61,14 @@ export default {
     },
     methods: {
         ...mapActions({
-            onChangeSubjectGridView: 'classRoom/onChangeSubjectGridView'
+            onChangeSubjectGridView: 'teacherClassRoom/onChangeSubjectGridView'
         }),
         changeGridView () {
             this.onChangeSubjectGridView(!this.isGridView)
         }
     },
     components: {
-        CardMatter
+        CardSubject
     }
 }
 </script>

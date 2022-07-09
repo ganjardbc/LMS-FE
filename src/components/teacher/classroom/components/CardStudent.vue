@@ -21,7 +21,10 @@
                         <div class="card-capsule active margin margin-right-15px">
                             <i class="icn fonts fonts-6 green fa fa-lw fa-circle"></i> Active
                         </div>
-                        <el-popover
+                        <button class="btn btn-circle btn-white">
+                            <i class="icn fa fa-lg fa-arrow-right"></i>
+                        </button>
+                        <!-- <el-popover
                             placement="bottom-end"
                             width="150"
                             trigger="click">
@@ -29,16 +32,13 @@
                                 <button class="btn btn-full btn-left btn-white">
                                     <i class="icn icn-left fa fa-lg fa-align-left"></i> Detail 
                                 </button>
-                                <!-- <button class="btn btn-full btn-left btn-white">
-                                    <i class="icn icn-left fa fa-lg fa-sign-out-alt"></i> Keluarkan 
-                                </button> -->
                             </div>
                             <button 
                                 slot="reference"
                                 class="btn btn-circle btn-transparent">
                                 <i class="icn fa fa-lg fa-ellipsis-v"></i>
                             </button>
-                        </el-popover>
+                        </el-popover> -->
                     </div>
                 </div>
             </div>
@@ -57,21 +57,6 @@
                             Lihat Detail 
                         </button>
                     </div>
-                    <!-- <el-popover
-                        placement="bottom-end"
-                        width="150"
-                        trigger="click">
-                        <div class="width width-100">
-                            <button class="btn btn-full btn-left btn-white">
-                                <i class="icn icn-left fa fa-lg fa-sign-out-alt"></i> Keluarkan 
-                            </button>
-                        </div>
-                        <button 
-                            slot="reference"
-                            class="btn btn-circle btn-transparent float-top-right">
-                            <i class="icn fa fa-lg fa-ellipsis-v"></i>
-                        </button>
-                    </el-popover> -->
                 </div>
             </div>
         </div>

@@ -29,9 +29,9 @@
                         <i class="icn icn-left fa fa-lg fa-filter"></i> Filter
                     </button>
                 </el-popover>
-                <button class="btn btn-main" style="margin-left: 5px;">
+                <!-- <button class="btn btn-main" style="margin-left: 5px;">
                     <i class="icn icn-left fa fa-lg fa-plus-circle"></i> Tambah
-                </button>
+                </button> -->
             </div>
         </div>
         <CardStudent :isGridView.sync="isGridView" :data.sync="students" />
@@ -39,7 +39,7 @@
 </template>
 <script>
 import { mapState, mapActions } from 'vuex'
-import CardStudent from '../../modules/CardStudent'
+import CardStudent from './components/CardStudent'
 export default {
     name: 'App',
     data () {
@@ -47,7 +47,7 @@ export default {
     },
     computed: {
         ...mapState({
-            detailStudent: state => state.classRoom.detail.student 
+            detailStudent: state => state.teacherClassRoom.detail.student 
         }),
         formFilter () {
             return this.detailStudent.formFilter
@@ -61,7 +61,7 @@ export default {
     },
     methods: {
         ...mapActions({
-            onChangeStudentGridView: 'classRoom/onChangeStudentGridView'
+            onChangeStudentGridView: 'teacherClassRoom/onChangeStudentGridView'
         }),
         changeGridView () {
             this.onChangeStudentGridView(!this.isGridView)

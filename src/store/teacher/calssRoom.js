@@ -10,16 +10,33 @@ export default {
             search: ''
         },
         data: [
-            {id: 1, image: classRoomImage3, title: 'SMA Kelas 3', description: 'SMA', subject: '15', student: '20'},
-            {id: 2, image: classRoomImage3, title: 'SMA Kelas 2', description: 'SMA', subject: '23', student: '20'},
-            {id: 3, image: classRoomImage3, title: 'SMA Kelas 1', description: 'SMA', subject: '77', student: '20'},
-            {id: 4, image: classRoomImage3, title: 'SMP Kelas 3', description: 'SMP', subject: '23', student: '20'},
-            {id: 5, image: classRoomImage3, title: 'SMP Kelas 2', description: 'SMP', subject: '77', student: '20'},
-            {id: 5, image: classRoomImage3, title: 'SMP Kelas 1', description: 'SMP', subject: '77', student: '20'}
+            {id: 1, image: classRoomImage3, title: 'Kelas 3.A', description: 'SMA | Angkatan 2020', type: 'SMA', subject: '15', student: '20'},
+            {id: 2, image: classRoomImage3, title: 'Kelas 3.B', description: 'SMA | Angkatan 2020', type: 'SMA', subject: '23', student: '20'},
+            {id: 3, image: classRoomImage3, title: 'Kelas 3.C', description: 'SMA | Angkatan 2020', type: 'SMA', subject: '77', student: '20'},
+            {id: 3, image: classRoomImage3, title: 'Kelas 3.D', description: 'SMA | Angkatan 2020', type: 'SMA', subject: '77', student: '20'},
+            {id: 3, image: classRoomImage3, title: 'Kelas 3.F', description: 'SMA | Angkatan 2020', type: 'SMA', subject: '77', student: '20'},
+            {id: 3, image: classRoomImage3, title: 'Kelas 3.G', description: 'SMA | Angkatan 2020', type: 'SMA', subject: '77', student: '20'},
+            {id: 4, image: classRoomImage3, title: 'Kelas 2.A', description: 'SMP | Angkatan 2021', type: 'SMP', subject: '23', student: '20'},
+            {id: 5, image: classRoomImage3, title: 'Kelas 2.B', description: 'SMP | Angkatan 2021', type: 'SMP', subject: '77', student: '20'},
+            {id: 5, image: classRoomImage3, title: 'Kelas 2.C', description: 'SMP | Angkatan 2021', type: 'SMP', subject: '77', student: '20'}
         ],
         detail: {
             activeTabs: 0,
             subject: {
+                isGridView: false,
+                formFilter : {
+                    search: ''
+                },
+                data: [
+                    {id: 1, image: classRoomImage, title: 'Matematika', subject: '15'},
+                    {id: 2, image: classRoomImage, title: 'Bahasa Inggris', subject: '23'},
+                    {id: 3, image: classRoomImage, title: 'Bahasa Indonesia', subject: '77'},
+                    {id: 4, image: classRoomImage, title: 'PKN', subject: '15'},
+                    {id: 5, image: classRoomImage, title: 'Ilmu Pengetahuan Alam', subject: '23'},
+                    {id: 6, image: classRoomImage, title: 'Teknologi Ilmu & Komputer', subject: '77'}
+                ]
+            },
+            matter: {
                 isGridView: false,
                 formFilter : {
                     search: ''
@@ -66,6 +83,11 @@ export default {
             state.detail.subject.isGridView = data 
         },
 
+        // MATTER
+        setMatterGridView (state, data) {
+            state.detail.matter.isGridView = data 
+        },
+
         // STUDENT
         setStudentGridView (state, data) {
             state.detail.student.isGridView = data 
@@ -80,6 +102,11 @@ export default {
         // SUBJECT
         onChangeSubjectGridView ({ state, commit }, data) {
             commit('setSubjectGridView', data)
+        },
+
+        // MATTER
+        onChangeMattertGridView ({ state, commit }, data) {
+            commit('setMatterGridView', data)
         },
 
         // STUDENT

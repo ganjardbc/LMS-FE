@@ -2,7 +2,7 @@
     <div id="admin">
         <div class="sidebar show">
             <div class="header header-left">
-                <div class="width width-50 display-flex center align-center">
+                <div class="width width-80 display-flex center align-center">
                     <router-link :to="{name: 'teacher-home'}" class="logo">
                         <img :src="logo" alt="SAJI-IN" style="width: 100%;">
                     </router-link>
@@ -35,6 +35,56 @@
             </div>
         </div>
         <div class="main">
+            <!-- <div class="main-content">
+                <div class="main-content-smalls">
+                    <div class="left-form">
+                        <router-view />
+                    </div>
+                    <div class="right-form display-flex column center">
+                        <div class="card bg-white display-flex column align-center">
+                            <div class="width width-100 margin margin-top-15px margin-bottom-15px">
+                                <div 
+                                    class="image image-120px image-center image-circle bg-size-contain bg-white-grey" 
+                                    style="text-align: center;">
+                                    <img 
+                                        v-if="image" 
+                                        :src="image" 
+                                        alt="">
+                                    <i 
+                                        v-else 
+                                        class="post-top fa fa-3x fa-user-circle" 
+                                        style="color: #999;" />
+                                </div>
+                            </div>
+                            <div class="fonts fonts-16 semibold black">Ganjar Hadiatna</div>
+                            <div class="fonts fonts-11 normal grey">Guru</div>
+                            <div class="width width-100 display-flex space-between padding padding-top-5px padding-bottom-15px">
+                                <div v-for="(dt, i) in metrics" :key="i" class="width width-95 display-flex column align-center">
+                                    <div class="fonts fonts-22 semibold primary align-center">{{ dt.value }}</div>
+                                    <div class="fonts fonts-10 normal black align-center">{{ dt.title }}</div>
+                                </div>
+                            </div>
+                            <div class="width width-100">
+                                <div class="margin margin-bottom-10px padding padding-top-10px border-bottom"></div>
+                                <button class="btn btn-white btn-full btn-left">
+                                    <i class="fonts teal icn icn-left fa fa-lg fa-user"></i> Profil Pengguna
+                                </button>
+                                <button class="btn btn-white btn-full btn-left">
+                                    <i class="fonts teal icn icn-left fa fa-lg fa-edit"></i> Edit Profil
+                                </button>
+                                <button class="btn btn-white btn-full btn-left">
+                                    <i class="fonts teal icn icn-left fa fa-lg fa-cog"></i> Pengaturan
+                                </button>
+                                <div class="margin margin-bottom-15px padding padding-top-15px border-bottom"></div>
+                                <button class="btn btn-white btn-full btn-left">
+                                    <i class="fonts red icn icn-left fa fa-lg fa-power-off"></i> Logout
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
             <div class="main-header">
                 <div class="main-header-container display-flex space-between align-center" >
                     <div class="width width-30">
@@ -53,8 +103,8 @@
                             placement="bottom-end"
                             width="250"
                             trigger="click">
-                            <div class="width width-100">
-                                <div class="display-flex column align-center padding padding-top-10px padding-bottom-10px">
+                            <div class="width width-100 padding padding-top-10px">
+                                <div class="display-flex column align-center padding padding-bottom-10px">
                                     <div 
                                         class="image image-circle image-80px margin margin-bottom-10px"
                                         style="text-align: center;">
@@ -80,46 +130,23 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="margin margin-bottom-10px padding padding-top-10px border-bottom"></div>
-                                <button class="btn btn-white btn-full btn-left">
-                                    <i class="fonts teal icn icn-left fa fa-lg fa-user"></i> Profil Pengguna
-                                </button>
-                                <button class="btn btn-white btn-full btn-left">
-                                    <i class="fonts teal icn icn-left fa fa-lg fa-edit"></i> Edit Profil
-                                </button>
-                                <button class="btn btn-white btn-full btn-left">
-                                    <i class="fonts teal icn icn-left fa fa-lg fa-cog"></i> Pengaturan
-                                </button>
-                                <div class="margin margin-bottom-10px padding padding-top-10px border-bottom"></div>
-                                <button class="btn btn-white btn-full btn-left">
+                                <div class="margin margin-bottom-15px padding padding-top-15px border-bottom"></div>
+                                <button class="btn btn-white btn-full btn-center">
                                     <i class="fonts red icn icn-left fa fa-lg fa-power-off"></i> Logout
                                 </button>
                             </div>
                             <button 
                                 slot="reference"
-                                class="btn btn-circle btn-white">
-                                <i class="far fa-lg fa-user"></i>
+                                class="btn btn-radius btn-white">
+                                <i class="icn icn-left fa fa-lg fa-user"></i> Guru  
                             </button>
                         </el-popover>
-                        <el-popover
-                            placement="bottom-end"
-                            width="250"
-                            trigger="click">
-                            <div class="width width-100">
-                                <button class="btn btn-white btn-full btn-left">
-                                    <i class="fonts teal icn icn-left fa fa-lg fa-book-open"></i> Tambah Mata Pelajaran 
-                                </button>
-                                <button class="btn btn-white btn-full btn-left">
-                                    <i class="fonts teal icn icn-left fa fa-lg fa-chalkboard-teacher"></i> Tambah Kelas Baru
-                                </button>
-                            </div>
-                            <button 
-                                slot="reference"
-                                class="btn btn-main" 
-                                style="margin-left: 15px;">
-                                <i class="icn icn-left fa fa-lg fa-plus-circle"></i> Tambah
-                            </button>
-                        </el-popover>
+                        <!-- <button 
+                            slot="reference"
+                            class="btn btn-main" 
+                            style="margin-left: 15px;">
+                            <i class="icn icn-left fa fa-lg fa-plus-circle"></i> Upload Materi Ajar
+                        </button> -->
                     </div>
                 </div>
             </div>
@@ -142,12 +169,16 @@ export default {
             search: '',
             visiblePopup: false,
             showBar: true,
+            metrics: [
+                {id: 2, icon: 'fa fa-lg fa-book-open', title: 'Jumlah Materi', value: '23'},
+                {id: 3, icon: 'fa fa-lg fa-graduation-cap', title: 'Jumlah Kelas', value: '77'}
+            ],
             sidebar: [
                 {icon: 'fa fa-lg fa-shapes', label: 'Dashboard', value: 0, link: 'teacher-home', permission: 'dashboard'},
-                {icon: 'fa fa-lg fa-book-open', label: 'Mata Pelajaran', value: 0, link: 'teacher-subject', permission: 'dashboard'},
                 {icon: 'fa fa-lg fa-chalkboard-teacher', label: 'Ruang Kelas', value: 0, link: 'teacher-class', permission: 'dashboard'},
-                {icon: 'fa fa-lg fa-comments', label: 'Notifikasi', value: 0, link: 'login', permission: 'dashboard'}
-                // {icon: 'fa fa-lg fa-graduation-cap', label: 'Siswa Terdaftar', value: 0, link: 'login', permission: 'dashboard'},
+                {icon: 'fa fa-lg fa-book-open', label: 'Materi Ajar', value: 0, link: 'teacher-subject', permission: 'dashboard'},
+                // {icon: 'fa fa-lg fa-graduation-cap', label: 'Daftar Murid', value: 0, link: 'login', permission: 'dashboard'},
+                {icon: 'fa fa-lg fa-comments', label: 'Notifikasi', value: 0, link: 'login', permission: 'dashboard'},
             ]
         }
     },

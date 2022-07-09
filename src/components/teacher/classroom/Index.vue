@@ -2,18 +2,24 @@
     <div id="app">
         <div class="width width-100">
             <div class="fonts fonts-32 semibold black">Ruang Kelas</div>
+            <AppTabs 
+                :isScrollable="false"
+                :selectedIndex.sync="activeTabs" 
+                :data="tabs" 
+                :onChange="(data) => onChangeTabs(data)" 
+                class="width width-300px margin margin-bottom-15-px" />
             <div class="display-flex space-between align-center padding padding-top-15px padding-bottom-15px">
-                <div class="width width-40 display-flex">
+                <div class="width width-30 display-flex">
                     <el-input placeholder="Cari kelas" v-model="formFilter.search" class="classroom-input-with-select">
-                        <el-select v-model="formFilter.select" slot="prepend" placeholder="Jenjang">
+                        <!-- <el-select v-model="formFilter.select" slot="prepend" placeholder="Jenjang">
                             <el-option label="Semua Jenjang" value="ALL"></el-option>
                             <el-option label="SMA" value="SMA"></el-option>
                             <el-option label="SMP" value="SMP"></el-option>
-                        </el-select>
+                        </el-select> -->
                         <el-button slot="append" icon="el-icon-search"></el-button>
                     </el-input>
                 </div>
-                <div class="width width-60 display-flex right">
+                <div class="width width-70 display-flex right">
                     <button 
                         slot="reference"
                         class="btn btn-sekunder" 
@@ -49,25 +55,34 @@
                             <i class="icn icn-left fa fa-lg fa-filter"></i> Filter
                         </button>
                     </el-popover>
-                    <button class="btn btn-main" style="margin-left: 5px;">
-                        <i class="icn icn-left fa fa-lg fa-plus-circle"></i> Tambah Kelas Baru
-                    </button>
                 </div>
             </div>
-            <Card :isGridView.sync="isGridView" :data.sync="data" />
+            <div v-if="activeTabs === 0">
+                <Card :isGridView.sync="isGridView" :data.sync="dataSMA" />
+            </div>
+            <div v-if="activeTabs === 1">
+                <Card :isGridView.sync="isGridView" :data.sync="dataSMP" />
+            </div>
         </div>
     </div>
 </template>
 <script>
 import { mapState, mapActions } from 'vuex'
 import Card from './components/Card'
+import AppTabs from '../../modules/AppTabs'
 export default {
     data () {
-        return {}
+        return {
+            activeTabs: 0,
+            tabs: [
+                {label: 'SMA', status: 'active'},
+                {label: 'SMP', status: ''}
+            ],
+        }
     },
     computed: {
         ...mapState({
-            classRoom: state => state.classRoom
+            classRoom: state => state.teacherClassRoom
         }),
         formFilter () {
             return this.classRoom.formFilter
@@ -77,17 +92,27 @@ export default {
         },
         data () {
             return this.classRoom.data 
+        },
+        dataSMA () {
+            return this.classRoom.data.filter((e) => e.type === 'SMA')
+        },
+        dataSMP () {
+            return this.classRoom.data.filter((e) => e.type === 'SMP')
         }
     },
     methods: {
         ...mapActions({
-            onChangeGridView: 'classRoom/onChangeGridView'
+            onChangeGridView: 'teacherClassRoom/onChangeGridView'
         }),
         changeGridView () {
             this.onChangeGridView(!this.isGridView)
-        }
+        },
+        onChangeTabs (data) {
+            this.activeTabs = data
+        },
     },
     components: {
+        AppTabs,
         Card
     }
 }

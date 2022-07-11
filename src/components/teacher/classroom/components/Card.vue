@@ -26,7 +26,7 @@
                         <button 
                             class="btn btn-sekunder"
                             @click="toViewDetail">
-                            Kelola
+                            Detail 
                         </button>
                     </div>
                 </div>
@@ -34,7 +34,7 @@
             <div v-if="isGridView" class="padding padding-15px">
                 <div class="card bg-white box-shadow">
                     <div 
-                        class="image image-half-padding bg-size-contain bg-white"
+                        class="image image-padding bg-size-contain bg-white"
                         :style="`background-image: url(${dt.image});`"
                         ></div>
                     <div class="display-flex column align-center padding padding-top-15px">
@@ -45,13 +45,13 @@
                             <div class="fonts fonts-10 normal grey margin margin-left-10px margin-right-10px">|</div>
                             <div class="fonts fonts-10 normal grey"><span class="fonts fonts-10 semibold primary">{{ dt.student }}</span> Murid</div>
                         </div>
-                        <div class="card-capsule active margin margin-bottom-15px">
+                        <div class="card-capsule active margin margin-left-5px margin-top-10px float-top-left">
                             <i class="icn fonts fonts-6 green fa fa-lw fa-circle"></i> Active
                         </div>
                         <button 
                             class="btn btn-sekunder btn-full"
                             @click="toViewDetail">
-                            Kelola Ruang Kelas
+                            Lihat Detail
                         </button>
                     </div>
                 </div>

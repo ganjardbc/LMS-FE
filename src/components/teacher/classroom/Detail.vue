@@ -48,7 +48,7 @@
                                 :style="`background-image: url(${cover});`"></div>
                         </div>
                         <div class="fonts fonts-16 semibold black">Kelas 3.A</div>
-                        <div class="fonts fonts-11 normal grey">SMA | Angkatan 2020</div>
+                        <div class="fonts fonts-11 normal grey">SMA, Angkatan 2020</div>
                         <div class="card-capsule active margin margin-10px">
                             <i class="icn fonts fonts-6 green fa fa-lw fa-circle"></i> Active
                         </div>

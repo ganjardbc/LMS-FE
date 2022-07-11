@@ -110,13 +110,20 @@
                     <div class="card box-shadow bg-white">
                         <div class="padding padding-15px">
                             <h1 class="fonts fonts-26 semibold black margin margin-bottom-15px">{{ content.title }}</h1>
-                            <div class="fonts fonts-11 normal grey margin margin-bottom-15px">{{ content.user }} | {{ content.type }} | {{ content.date }}</div>
-                            <div class="margin margin-top-30px margin-bottom-30px">
-                                <div class="image image-half-padding bg-white-grey">
-                                    <i class="post-middle-absolute fonts fonts-42 grey fa fa-lg fa-images"></i>
+                            <div class="fonts fonts-11 normal grey margin margin-bottom-15px">{{ content.date }}</div>
+                            <div class="fonts fonts-12 normal black" v-html="content.description"></div>
+                            <div class="padding padding-top-30px">
+                                <div class="fonts fonts-12 semibold black"><span class="fonts primary semibold">{{ content.contents.length }}</span> Dokumen</div>
+                                <div 
+                                    v-for="(dt, i) in content.contents" 
+                                    :key="i" 
+                                    class="margin margin-top-30px margin-bottom-30px">
+                                    <div class="image image-200px bg-white-grey margin margin-bottom-15px">
+                                        <i class="post-middle-absolute fonts fonts-42 grey fa fa-lg fa-images"></i>
+                                    </div>
+                                    <div class="fonts fonts-12 normal black" v-html="dt.description"></div>
                                 </div>
                             </div>
-                            <div class="fonts fonts-12 normal black" v-html="content.description"></div>
                         </div>
                     </div>
                 </div>
@@ -127,33 +134,36 @@
 <script>
 import classRoomImage from '../../../assets/img/classroom.jpg'
 import AppBreadcrumps from '../../modules/AppBreadcrumps'
-import DetailSubject from './DetailSubject'
 export default {
     data () {
         return {
             cover: classRoomImage,
             dashboard: [
-                {id: 2, icon: 'fa fa-lg fa-book-open', title: 'Pengunjung', value: '23'}
+                {id: 2, icon: 'fa fa-lg fa-book-open', title: 'Dokumen', value: '23'}
             ],
             info: [
                 {icon: 'fa fa-lg fa-user', key: 'Guru', value: 'Ganjar Hadiatna'},
                 {icon: 'fa fa-lg fa-user', key: 'Mapel', value: 'Matematika'},
+                {icon: 'fa fa-lg fa-user', key: 'Jadwal', value: 'Pertemuan 1'},
                 {icon: 'fa fa-lg fa-user', key: 'Kelas', value: 'Kelas 3.A'},
                 {icon: 'fa fa-lg fa-user', key: 'Jenjang', value: 'SMA'},
-                {icon: 'fa fa-lg fa-user', key: 'Tahun Ajar', value: 'Angkatan 2020'},
             ],
             content: {
                 title: 'MTK Pertemuan 1',
-                date: '9 Juli 2022, 10.00 WIB',
+                date: 'Dibuat oleh Ganjar pada 9 Juli 2022, 10.00 WIB',
                 user: 'Ganjar Hadiatna',
                 type: 'Matematika',
-                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br/><br/>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br/><br/>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                contents: [
+                    {file: '', description: 'Lorem ipsum dolor sit amet.'},
+                    {file: '', description: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
+                    {file: '', description: 'Consectetur adipiscing elit, sed do eiusmod.'},
+                ]
             }
         }
     },
     components: {
-        AppBreadcrumps,
-        DetailSubject
+        AppBreadcrumps 
     },
     computed: {
         subjectId () {
@@ -162,6 +172,7 @@ export default {
         breadcrumps () {
             return [
                 {title: 'Materi Ajar', active: false},
+                {title: 'Detail', active: false},
                 {title: this.subjectId, active: true},
             ]
         }

@@ -4,6 +4,7 @@ import auth from './auth'
 import teacherDashboard from './teacher/dashboard'
 import teacherClassRoom from './teacher/calssRoom'
 import teacherSubject from './teacher/subject'
+import teacherMatter from './teacher/matter'
 
 Vue.use(Vuex)
 
@@ -12,6 +13,7 @@ export default new Vuex.Store({
     auth,
     teacherDashboard,
     teacherClassRoom,
-    teacherSubject
+    teacherSubject,
+    teacherMatter
   }
 })

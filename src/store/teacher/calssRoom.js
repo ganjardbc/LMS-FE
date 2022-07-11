@@ -10,15 +10,15 @@ export default {
             search: ''
         },
         data: [
-            {id: 1, image: classRoomImage3, title: 'Kelas 3.A', description: 'SMA | Angkatan 2020', type: 'SMA', subject: '15', student: '20'},
-            {id: 2, image: classRoomImage3, title: 'Kelas 3.B', description: 'SMA | Angkatan 2020', type: 'SMA', subject: '23', student: '20'},
-            {id: 3, image: classRoomImage3, title: 'Kelas 3.C', description: 'SMA | Angkatan 2020', type: 'SMA', subject: '77', student: '20'},
-            {id: 3, image: classRoomImage3, title: 'Kelas 3.D', description: 'SMA | Angkatan 2020', type: 'SMA', subject: '77', student: '20'},
-            {id: 3, image: classRoomImage3, title: 'Kelas 3.F', description: 'SMA | Angkatan 2020', type: 'SMA', subject: '77', student: '20'},
-            {id: 3, image: classRoomImage3, title: 'Kelas 3.G', description: 'SMA | Angkatan 2020', type: 'SMA', subject: '77', student: '20'},
-            {id: 4, image: classRoomImage3, title: 'Kelas 2.A', description: 'SMP | Angkatan 2021', type: 'SMP', subject: '23', student: '20'},
-            {id: 5, image: classRoomImage3, title: 'Kelas 2.B', description: 'SMP | Angkatan 2021', type: 'SMP', subject: '77', student: '20'},
-            {id: 5, image: classRoomImage3, title: 'Kelas 2.C', description: 'SMP | Angkatan 2021', type: 'SMP', subject: '77', student: '20'}
+            {id: 1, image: classRoomImage3, title: 'Kelas 3.A', description: 'SMA, Angkatan 2020', type: 'SMA', subject: '15', student: '20'},
+            {id: 2, image: classRoomImage3, title: 'Kelas 3.B', description: 'SMA, Angkatan 2020', type: 'SMA', subject: '23', student: '20'},
+            {id: 3, image: classRoomImage3, title: 'Kelas 3.C', description: 'SMA, Angkatan 2020', type: 'SMA', subject: '77', student: '20'},
+            {id: 3, image: classRoomImage3, title: 'Kelas 3.D', description: 'SMA, Angkatan 2020', type: 'SMA', subject: '77', student: '20'},
+            {id: 3, image: classRoomImage3, title: 'Kelas 3.F', description: 'SMA, Angkatan 2020', type: 'SMA', subject: '77', student: '20'},
+            {id: 3, image: classRoomImage3, title: 'Kelas 3.G', description: 'SMA, Angkatan 2020', type: 'SMA', subject: '77', student: '20'},
+            {id: 4, image: classRoomImage3, title: 'Kelas 2.A', description: 'SMP, Angkatan 2021', type: 'SMP', subject: '23', student: '20'},
+            {id: 5, image: classRoomImage3, title: 'Kelas 2.B', description: 'SMP, Angkatan 2021', type: 'SMP', subject: '77', student: '20'},
+            {id: 5, image: classRoomImage3, title: 'Kelas 2.C', description: 'SMP, Angkatan 2021', type: 'SMP', subject: '77', student: '20'}
         ],
         detail: {
             activeTabs: 0,

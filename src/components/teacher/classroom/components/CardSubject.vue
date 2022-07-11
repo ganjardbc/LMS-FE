@@ -75,7 +75,7 @@ export default {
     },
     methods: {
         toViewDetail () {
-            this.$router.push({name: 'teacher-class-subject', params: {classId: 'CR-00000000001', subjectId: 'SB-00000000001'}})
+            this.$router.push({name: 'teacher-subject', params: {classId: 'CR-00000000001', subjectId: 'SB-00000000001'}})
         }
     }
 }

@@ -99,6 +99,15 @@
                         <button class="btn btn-circle btn-white">
                             <i class="far fa-lg fa-life-ring"></i>
                         </button>
+                        <!-- <el-popover
+                            placement="bottom-end"
+                            width="250"
+                            trigger="click">
+                            <div>NOTIFICATIONS</div>
+                            <button slot="reference" class="btn btn-circle btn-white">
+                                <i class="far fa-lg fa-bell"></i>
+                            </button>
+                        </el-popover> -->
                         <el-popover
                             placement="bottom-end"
                             width="250"
@@ -113,8 +122,8 @@
                                             class="post-top fa fa-2x fa-user-circle" 
                                             style="color: #999;" />
                                     </div>
-                                    <div class="fonts fonts-11 semibold black">USERNAME</div>
-                                    <div class="fonts fonts-9 normal black margin margin-bottom-10px">Guru</div>
+                                    <div class="fonts fonts-11 semibold black">Ganjar Hadiatna</div>
+                                    <div class="fonts fonts-9 normal black margin margin-bottom-10px">Guru / Pengajar</div>
                                     <div class="display-flex row center" style="width: 100%;">
                                         <div class="width width-50">
                                             <div class="fonts fonts-11 primary semibold align-center">15</div>
@@ -137,8 +146,8 @@
                             </div>
                             <button 
                                 slot="reference"
-                                class="btn btn-radius btn-white">
-                                <i class="icn icn-left fa fa-lg fa-user"></i> Guru  
+                                class="btn btn-radius btn-sekunder margin margin-left-10px">
+                                <i class="icn icn-left far fa-lg fa-user"></i> Ganjar Hadiatna  
                             </button>
                         </el-popover>
                         <!-- <button 
@@ -175,8 +184,8 @@ export default {
             ],
             sidebar: [
                 {icon: 'fa fa-lg fa-shapes', label: 'Dashboard', value: 0, link: 'teacher-home', permission: 'dashboard'},
+                {icon: 'fa fa-lg fa-book-open', label: 'Materi Ajar', value: 0, link: 'teacher-matter', permission: 'dashboard'},
                 {icon: 'fa fa-lg fa-chalkboard-teacher', label: 'Ruang Kelas', value: 0, link: 'teacher-class', permission: 'dashboard'},
-                {icon: 'fa fa-lg fa-book-open', label: 'Materi Ajar', value: 0, link: 'teacher-subject', permission: 'dashboard'},
                 // {icon: 'fa fa-lg fa-graduation-cap', label: 'Daftar Murid', value: 0, link: 'login', permission: 'dashboard'},
                 {icon: 'fa fa-lg fa-comments', label: 'Notifikasi', value: 0, link: 'login', permission: 'dashboard'},
             ]

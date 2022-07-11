@@ -20,7 +20,7 @@
                             v-model="dt.fileType" 
                             slot="prepend" 
                             class="el-select-matter-form"
-                            placeholder="Tipe file">
+                            placeholder="">
                             <el-option label="Video" value="video"></el-option>
                             <el-option label="Audio" value="audio"></el-option>
                             <el-option label="PDF" value="PDF"></el-option>

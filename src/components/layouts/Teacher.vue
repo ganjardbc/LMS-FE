@@ -96,10 +96,10 @@
                         </el-input>
                     </div>
                     <div class="width width-70 display-flex right align-center">
-                        <button class="btn btn-circle btn-white">
+                        <!-- <button class="btn btn-circle btn-white">
                             <i class="far fa-lg fa-life-ring"></i>
-                        </button>
-                        <!-- <el-popover
+                        </button> -->
+                        <el-popover
                             placement="bottom-end"
                             width="250"
                             trigger="click">
@@ -107,7 +107,7 @@
                             <button slot="reference" class="btn btn-circle btn-white">
                                 <i class="far fa-lg fa-bell"></i>
                             </button>
-                        </el-popover> -->
+                        </el-popover>
                         <el-popover
                             placement="bottom-end"
                             width="250"
@@ -187,7 +187,7 @@ export default {
                 {icon: 'fa fa-lg fa-book-open', label: 'Materi Ajar', value: 0, link: 'teacher-matter', permission: 'dashboard'},
                 {icon: 'fa fa-lg fa-chalkboard-teacher', label: 'Ruang Kelas', value: 0, link: 'teacher-class', permission: 'dashboard'},
                 // {icon: 'fa fa-lg fa-graduation-cap', label: 'Daftar Murid', value: 0, link: 'login', permission: 'dashboard'},
-                {icon: 'fa fa-lg fa-comments', label: 'Notifikasi', value: 0, link: 'login', permission: 'dashboard'},
+                // {icon: 'fa fa-lg fa-comments', label: 'Notifikasi', value: 0, link: 'login', permission: 'dashboard'},
             ]
         }
     },

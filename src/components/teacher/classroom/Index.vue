@@ -11,11 +11,6 @@
             <div class="display-flex space-between align-center padding padding-top-15px padding-bottom-15px">
                 <div class="width width-30 display-flex">
                     <el-input placeholder="Cari kelas" v-model="formFilter.search" class="classroom-input-with-select">
-                        <!-- <el-select v-model="formFilter.select" slot="prepend" placeholder="Jenjang">
-                            <el-option label="Semua Jenjang" value="ALL"></el-option>
-                            <el-option label="SMA" value="SMA"></el-option>
-                            <el-option label="SMP" value="SMP"></el-option>
-                        </el-select> -->
                         <el-button slot="append" icon="el-icon-search"></el-button>
                     </el-input>
                 </div>

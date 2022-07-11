@@ -29,7 +29,7 @@
                                     </div>
                                 </div>
                                 <div class="width width-160px display-flex flex-end align-center">
-                                    <button class="btn btn-primary">
+                                    <button class="btn btn-sekunder">
                                         Pilih Mapel
                                     </button>
                                 </div>

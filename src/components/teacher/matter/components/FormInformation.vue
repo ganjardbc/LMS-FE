@@ -38,7 +38,7 @@
                         v-model="formMatter.schedule" 
                         slot="prepend" 
                         class="el-select-matter-form"
-                        placeholder="Jadwal pertemuan">
+                        placeholder="">
                         <el-option label="Pertemuan 1" value="schedule-1"></el-option>
                         <el-option label="Pertemuan 2" value="schedule-2"></el-option>
                         <el-option label="Pertemuan 3" value="schedule-3"></el-option>

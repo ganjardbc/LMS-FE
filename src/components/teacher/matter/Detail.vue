@@ -1,65 +1,5 @@
 <template>
     <div id="app">
-        <!-- <div class="left-form">
-            <div class="padding padding-bottom-25px">
-                <AppBreadcrumps :data.sync="breadcrumps" :goBack="goBack" />
-            </div>
-            <div class="card box-shadow bg-white">
-                <div class="padding padding-15px">
-                    <h1 class="fonts fonts-26 semibold black margin margin-bottom-15px">{{ content.title }}</h1>
-                    <div class="fonts fonts-11 normal grey margin margin-bottom-15px">{{ content.user }} | {{ content.type }} | {{ content.date }}</div>
-                    <div class="margin margin-top-30px margin-bottom-30px">
-                        <div class="image image-half-padding bg-white-grey">
-                            <i class="post-middle-absolute fonts fonts-42 grey fa fa-lg fa-images"></i>
-                        </div>
-                    </div>
-                    <div class="fonts fonts-12 normal black" v-html="content.description"></div>
-                </div>
-            </div>
-        </div>
-        <div class="right-form display-flex column center">
-            <div class="card bg-white display-flex column align-center">
-                <div class="fonts fonts-16 semibold black">Materi Ajar</div>
-                <div class="width width-100 margin margin-top-15px margin-bottom-15px">
-                    <div 
-                        class="image image-half-padding bg-size-contain bg-white"
-                        :style="`background-image: url(${cover});`"></div>
-                </div>
-                <div class="fonts fonts-16 semibold black">MTK Pertemuan 1</div>
-                <div class="width width-100 display-flex space-between">
-                    <div v-for="(dt, i) in dashboard" :key="i" class="width width-95 display-flex row center align-center">
-                        <span class="fonts fonts-11 semibold primary margin margin-right-5px">{{ dt.value }}</span>
-                        <span class="fonts fonts-11 normal black">{{ dt.title }}</span>
-                    </div>
-                </div>
-                <div class="padding padding-10px">
-                    <div class="card-capsule active">
-                        <i class="icn fonts fonts-6 green fa fa-lw fa-circle"></i> Active
-                    </div>
-                </div>
-                <div class="width width-100 padding padding-top-5px padding-bottom-5px">
-                    <div 
-                        v-for="(dt, i) in info" :key="i" 
-                        class="display-flex row align-center center padding padding-bottom-10px">
-                        <div class="width width-30 align-center">
-                            <div class="fonts fonts-11 semibold black">{{ dt.key }}</div>
-                        </div>
-                        <div class="width width-70">
-                            <div class="fonts fonts-11 normal black">: {{ dt.value }}</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="width width-100 display-flex row space-between">
-                    <button class="btn btn-center btn-sekunder width width-49">
-                        <i class="icn icn-left fa fa-lg fa-edit"></i> Edit Materi 
-                    </button>
-                    <button class="btn btn-center btn-danger width width-49">
-                        <i class="icn icn-left fa fa-lg fa-trash-alt"></i> Hapur Materi  
-                    </button>
-                </div>
-            </div>
-        </div> -->
-
         <div class="width width-100">
             <div class="width width-100">
                 <AppBreadcrumps :data.sync="breadcrumps" :goBack="goBack" />
@@ -107,21 +47,31 @@
                     </div>
                 </div>
                 <div class="width width-67">
-                    <div class="card box-shadow bg-white">
+                    <div class="card bg-white">
                         <div class="padding padding-15px">
                             <h1 class="fonts fonts-26 semibold black margin margin-bottom-15px">{{ content.title }}</h1>
-                            <div class="fonts fonts-11 normal grey margin margin-bottom-15px">{{ content.date }}</div>
-                            <div class="fonts fonts-12 normal black" v-html="content.description"></div>
+                            <div class="fonts fonts-10 normal grey margin margin-bottom-15px">{{ content.date }}</div>
+                            <div class="fonts fonts-11 normal black" v-html="content.description"></div>
                             <div class="padding padding-top-30px">
                                 <div class="fonts fonts-12 semibold black"><span class="fonts primary semibold">{{ content.contents.length }}</span> Dokumen</div>
-                                <div 
-                                    v-for="(dt, i) in content.contents" 
-                                    :key="i" 
-                                    class="margin margin-top-30px margin-bottom-30px">
-                                    <div class="image image-200px bg-white-grey margin margin-bottom-15px">
-                                        <i class="post-middle-absolute fonts fonts-42 grey fa fa-lg fa-images"></i>
+                                <div v-for="(dt, i) in content.contents" :key="i" class="margin margin-bottom-20px margin-top-20px">
+                                    <div class="card box-shadow bg-white display-flex row align-center">
+                                        <div class="width width-100px">
+                                            <div class="image image-80px bg-white-grey">
+                                                <i class="post-middle-absolute fonts fonts-18 grey fa fa-lg fa-images"></i>
+                                            </div>
+                                        </div>
+                                        <div style="width: calc(100% - 200px);">
+                                            <div class="fonts fonts-11 normal black" v-html="dt.description"></div>
+                                            <div class="fonts fonts-10 normal grey">{{ dt.fileType }}, {{ dt.date }}</div>
+                                            <div class="fonts fonts-10 normal grey"></div>
+                                        </div>
+                                        <div class="width width-100px display-flex flex-end">
+                                            <button class="btn btn-sekunder">
+                                                <i class="icn icn-left fa fa-lg fa-align-left"></i> Detail 
+                                            </button>
+                                        </div>
                                     </div>
-                                    <div class="fonts fonts-12 normal black" v-html="dt.description"></div>
                                 </div>
                             </div>
                         </div>
@@ -155,9 +105,9 @@ export default {
                 type: 'Matematika',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br/><br/>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                 contents: [
-                    {file: '', description: 'Lorem ipsum dolor sit amet.'},
-                    {file: '', description: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
-                    {file: '', description: 'Consectetur adipiscing elit, sed do eiusmod.'},
+                    {file: '', description: 'Lorem ipsum dolor sit amet.', fileType: 'Audio File', date: '9 Juli 2022, 10.00 WIB'},
+                    {file: '', description: 'Sed labore et dolore magna aliqua.', fileType: 'Video File', date: '9 Juli 2022, 10.00 WIB'},
+                    {file: '', description: 'Consectetur adipiscing elit, sed do eiusmod.', fileType: 'PDF File', date: '9 Juli 2022, 10.00 WIB'},
                 ]
             }
         }

@@ -37,19 +37,19 @@
                     <div class="padding padding-left-15px padding-right-15px display-flex row align-center flex-end" style="height: 60px;">
                         <button 
                             v-if="activeIndex === 0" 
-                            class="btn btn-sekunder" 
+                            class="btn btn-grey" 
                             @click="goBack">
                             Batalkan
                         </button>
                         <button 
                             v-if="activeIndex > 0" 
-                            class="btn btn-sekunder" 
+                            class="btn btn-grey" 
                             @click="goPrev">
                             Kembali 
                         </button>
                         <button 
                             v-if="activeIndex < totalStep" 
-                            class="btn btn-sekunder margin margin-left-10px" 
+                            class="btn btn-main margin margin-left-10px" 
                             @click="goNext">
                             Selanjutnya
                         </button>

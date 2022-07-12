@@ -23,9 +23,9 @@
                                 <div class="fonts fonts-10 normal black align-center">{{ dt.title }}</div>
                             </div>
                         </div>
-                        <button class="btn btn-main btn-full">
+                        <router-link :to="{name: 'teacher-matter-create'}" class="btn btn-main btn-full-padding">
                             <i class="icn icn-left fa fa-lg fa-plus-circle"></i> Upload Materi Ajar
-                        </button>
+                        </router-link>
                     </div>
                 </div>
                 <div class="width width-67">

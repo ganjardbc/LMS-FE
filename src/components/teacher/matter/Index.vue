@@ -44,12 +44,12 @@
                             <i class="icn icn-left fa fa-lg fa-filter"></i> Filter
                         </button>
                     </el-popover>
-                    <button 
+                    <router-link
+                        :to="{name: 'teacher-matter-create'}" 
                         class="btn btn-main" 
-                        style="margin-left: 5px;"
-                        @click="toCreateForm">
+                        style="margin-left: 5px;">
                         <i class="icn icn-left fa fa-lg fa-plus-circle"></i> Upload Materi Ajar
-                    </button>
+                    </router-link>
                 </div>
             </div>
             <Card :isGridView.sync="isGridView" :data.sync="data" />

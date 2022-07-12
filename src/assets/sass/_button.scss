@@ -1,7 +1,6 @@
 a {
     &.btn {
         text-decoration: none;
-        margin: 0 2px;
     }
 }
 
@@ -186,7 +185,8 @@ a {
         width: 100%;
     }
     &.btn-full-padding {
-        width: calc(100% - 24.16px);
+        width: 100%;
+        padding: 11px 0;
     }
     &.btn-no-hover {
         &:hover {
@@ -194,9 +194,9 @@ a {
             background-color: rgba($color: #fff, $alpha: 0);
         }
     }
-    &.router-link-active {
-        background-color: $white-grey;
-    }
+    // &.router-link-active {
+    //     background-color: $white-grey;
+    // }
     &.btn-route-link {
         display: block;
         color: $black;

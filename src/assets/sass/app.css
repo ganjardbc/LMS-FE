@@ -257,7 +257,6 @@
 
 a.btn {
   text-decoration: none;
-  margin: 0 2px;
 }
 
 .btn {
@@ -439,14 +438,12 @@ a.btn {
   width: 100%;
 }
 .btn.btn-full-padding {
-  width: calc(100% - 24.16px);
+  width: 100%;
+  padding: 11px 0;
 }
 .btn.btn-no-hover:hover {
   cursor: default;
   background-color: rgba(255, 255, 255, 0);
-}
-.btn.router-link-active {
-  background-color: #f9f9f9;
 }
 .btn.btn-route-link {
   display: block;

@@ -23,11 +23,11 @@
                         <div class="card-capsule active margin margin-right-15px">
                             <i class="icn fonts fonts-6 green fa fa-lw fa-circle"></i> Active
                         </div>
-                        <button 
-                            class="btn btn-sekunder"
-                            @click="toViewDetail">
+                        <router-link
+                            :to="{name: 'teacher-class-detail', params: {id: 'CR-00000000001'}}" 
+                            class="btn btn-sekunder">
                             Detail 
-                        </button>
+                        </router-link>
                     </div>
                 </div>
             </div>
@@ -48,11 +48,11 @@
                         <div class="card-capsule active margin margin-left-5px margin-top-10px float-top-left">
                             <i class="icn fonts fonts-6 green fa fa-lw fa-circle"></i> Active
                         </div>
-                        <button 
-                            class="btn btn-sekunder btn-full"
-                            @click="toViewDetail">
+                        <router-link
+                            :to="{name: 'teacher-class-detail', params: {id: 'CR-00000000001'}}" 
+                            class="btn btn-sekunder btn-full-padding">
                             Lihat Detail
-                        </button>
+                        </router-link>
                     </div>
                 </div>
             </div>

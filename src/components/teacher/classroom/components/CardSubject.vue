@@ -20,9 +20,11 @@
                         <div class="card-capsule active margin margin-right-15px">
                             <i class="icn fonts fonts-6 green fa fa-lw fa-circle"></i> Active
                         </div>
-                        <button class="btn btn-circle btn-white" @click="toViewDetail">
+                        <router-link 
+                            :to="{name: 'teacher-subject', params: {classId: 'CR-00000000001', subjectId: 'SB-00000000001'}}"
+                            class="btn btn-circle btn-white">
                             <i class="icn fa fa-lg fa-arrow-right"></i>
-                        </button>
+                        </router-link>
                         <!-- <el-popover
                             placement="bottom-end"
                             width="150"
@@ -55,11 +57,11 @@
                         <div class="card-capsule active margin margin-bottom-15px">
                             <i class="icn fonts fonts-6 green fa fa-lw fa-circle"></i> Active
                         </div>
-                        <button 
-                            class="btn btn-sekunder btn-full"
-                            @click="toViewDetail">
+                        <router-link 
+                            :to="{name: 'teacher-subject', params: {classId: 'CR-00000000001', subjectId: 'SB-00000000001'}}"
+                            class="btn btn-sekunder btn-full-padding">
                             Lihat Detail 
-                        </button>
+                        </router-link>
                     </div>
                 </div>
             </div>

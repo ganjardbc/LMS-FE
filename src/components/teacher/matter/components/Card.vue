@@ -60,11 +60,11 @@
                         <div class="card-capsule active margin margin-left-5px margin-top-10px float-top-left">
                             <i class="icn fonts fonts-6 green fa fa-lw fa-circle"></i> Active
                         </div>
-                        <button 
-                            class="btn btn-sekunder btn-full"
-                            @click="toViewDetail">
+                        <router-link
+                            :to="{name: 'teacher-matter-detail', params: {id: 'SB-00000000001'}}" 
+                            class="btn btn-sekunder btn-full-padding">
                             Lihat Detail
-                        </button>
+                        </router-link>
                         <el-popover
                             placement="bottom-end"
                             width="150"

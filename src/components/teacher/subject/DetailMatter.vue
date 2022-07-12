@@ -29,9 +29,9 @@
                         <i class="icn icn-left fa fa-lg fa-filter"></i> Filter
                     </button>
                 </el-popover>
-                <button class="btn btn-main" style="margin-left: 5px;">
+                <router-link :to="{name: 'teacher-matter-create'}" class="btn btn-main" style="margin-left: 5px;">
                     <i class="icn icn-left fa fa-lg fa-plus-circle"></i> Upload
-                </button>
+                </router-link>
             </div>
         </div>
         <CardMatter :isGridView.sync="isGridView" :data.sync="data" />

@@ -61,14 +61,14 @@
                                                 <i class="post-middle-absolute fonts fonts-18 grey fa fa-lg fa-images"></i>
                                             </div>
                                         </div>
-                                        <div style="width: calc(100% - 200px);">
+                                        <div style="width: calc(100% - 230px);">
                                             <div class="fonts fonts-11 normal black" v-html="dt.description"></div>
                                             <div class="fonts fonts-10 normal grey">{{ dt.fileType }}, {{ dt.date }}</div>
                                             <div class="fonts fonts-10 normal grey"></div>
                                         </div>
-                                        <div class="width width-100px display-flex flex-end">
+                                        <div class="width width-130px display-flex flex-end">
                                             <button class="btn btn-sekunder">
-                                                <i class="icn icn-left fa fa-lg fa-align-left"></i> Detail 
+                                                Buka Dokumen
                                             </button>
                                         </div>
                                     </div>

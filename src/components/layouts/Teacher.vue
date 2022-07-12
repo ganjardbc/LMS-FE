@@ -96,9 +96,9 @@
                         </el-input>
                     </div>
                     <div class="width width-70 display-flex right align-center">
-                        <!-- <button class="btn btn-circle btn-white">
+                        <button class="btn btn-circle btn-white">
                             <i class="far fa-lg fa-life-ring"></i>
-                        </button> -->
+                        </button>
                         <el-popover
                             placement="bottom-end"
                             width="250"
@@ -150,12 +150,11 @@
                                 <i class="icn icn-left far fa-lg fa-user"></i> Ganjar Hadiatna  
                             </button>
                         </el-popover>
-                        <!-- <button 
-                            slot="reference"
-                            class="btn btn-main" 
-                            style="margin-left: 15px;">
+                        <!-- <router-link 
+                            :to="{name: 'teacher-matter-create'}"
+                            class="btn btn-main btn-radius margin margin-left-10px">
                             <i class="icn icn-left fa fa-lg fa-plus-circle"></i> Upload Materi Ajar
-                        </button> -->
+                        </router-link> -->
                     </div>
                 </div>
             </div>

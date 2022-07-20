@@ -45,7 +45,7 @@
 
                 <div class="padding padding-top-5px">
                     <button class="btn btn-sekunder btn-full" @click="onAddFormContent">
-                        <i class="icn icn-left fa fa-lg fa-plus-circle"></i> Tambah Konten 
+                        <i class="icn icn-left fa fa-lg fa-plus-circle"></i> Tambah Dokumen  
                     </button>
                 </div>
             </div>

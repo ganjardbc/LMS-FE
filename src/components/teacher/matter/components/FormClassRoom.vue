@@ -28,7 +28,15 @@
                                     </div>
                                 </div>
                                 <div class="width width-160px display-flex flex-end align-center">
-                                    <button class="btn btn-sekunder">
+                                    <button 
+                                        v-if="selectedClassRoom === dt.id" 
+                                        class="btn btn-primary btn-circle">
+                                        <i class="fa fa-lg fa-check-circle"></i>
+                                    </button>
+                                    <button 
+                                        v-else 
+                                        class="btn btn-sekunder"
+                                        @click="onSelect(dt.id)">
                                         Pilih Kelas
                                     </button>
                                 </div>
@@ -52,11 +60,17 @@ export default {
     computed: {
         ...mapState({
             formMatter: state => state.teacherMatter.form,
-            errorMessage: state => state.teacherMatter.errorMessage
+            errorMessage: state => state.teacherMatter.errorMessage,
+            dataClassRoom: state => state.teacherMatter.dataClassRoom,
         }),
-        dataClassRoom () {
-            return this.formMatter.dataClassRoom
-        },
+        selectedClassRoom () {
+            return this.formMatter.classRoom 
+        }
+    },
+    methods: {
+        onSelect(value) {
+            this.formMatter.classRoom = value 
+        }
     }
 }
 </script>

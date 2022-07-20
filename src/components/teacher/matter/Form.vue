@@ -64,25 +64,32 @@
             </div>
         </div>
 
-        <div v-if="visiblePopup" class="display-popup">
-            <div class="post-middle-absolute card box-shadow bg-white width width-350px">
-                <div class="padding padding-30px">
-                    <div class="display-flex column align-center">
-                        <i class="fonts fonts-64 primary far fa-4x fa-check-circle"></i>
-                        <div class="fonts fonts-12 semibold black margin margin-top-30px margin-bottom-30px">Materi Ajar Berhasil Di-upload.</div>
-                        <button class="btn btn-main btn-full" @click="onClickOk">
-                            Ok, Saya Mengerti
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <AppConfirmed 
+            v-if="visibleAnswer"
+            title="Upload Materi Ajar ?"
+            @onClickNo="onClickNo"
+            @onClickYes="onClickYes"
+        />
+
+        <AppAlert 
+            v-if="visiblePopup"
+            title="Materi Ajar Berhasil Di-upload !"
+            @onClickOk="onClickOk"
+        />
+
+        <AppPopupLoader 
+            v-if="viisbleLoader"
+            title="Mohon Tunggu ..."
+        />
 
     </div>
 </template>
 <script>
 import { mapState, mapActions } from 'vuex'
 import AppBreadcrumps from '../../modules/AppBreadcrumps'
+import AppConfirmed from '../../modules/AppConfirmed'
+import AppAlert from '../../modules/AppAlert'
+import AppPopupLoader from '../../modules/AppPopupLoader'
 import FormClassRoom from './components/FormClassRoom'
 import FormSubject from './components/FormSubject'
 import FormInformation from './components/FormInformation'
@@ -93,7 +100,9 @@ export default {
     name: 'App',
     data () {
         return {
+            visibleAnswer: false,
             visiblePopup: false,
+            viisbleLoader: false,
             totalStep: 4,
         }
     },
@@ -102,6 +111,9 @@ export default {
     },
     components: {
         AppBreadcrumps,
+        AppConfirmed,
+        AppAlert,
+        AppPopupLoader,
         FormClassRoom,
         FormSubject,
         FormInformation,
@@ -124,13 +136,24 @@ export default {
             this.onFormActiveIndex(index)
         },
         onSubmit () {
-            this.visiblePopup = true
+            this.visibleAnswer = true
         },
         onClickOk () {
             this.visiblePopup = false
             this.onFormActiveIndex(0)
             this.goBack()
-        }
+        },
+        onClickNo () {
+            this.visibleAnswer = false 
+        },
+        onClickYes () {
+            this.visibleAnswer = false 
+            this.viisbleLoader = true 
+            setTimeout(() => {
+                this.viisbleLoader = false 
+                this.visiblePopup = true 
+            }, 3000);
+        },
     },
     computed: {
         ...mapState({

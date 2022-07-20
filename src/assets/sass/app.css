@@ -1619,7 +1619,7 @@ a.btn {
 .card-small-profile {
   position: relative;
   height: 30px;
-  padding: 5px;
+  padding: 3px;
   border-radius: 50px;
   display: flex;
   flex-wrap: nowrap;
@@ -1645,6 +1645,16 @@ a.btn {
 }
 .card-small-profile.router-link-active {
   background-color: #f9f9f9;
+}
+.card-small-profile.bg-main {
+  background-color: #409EFF;
+}
+.card-small-profile.bg-main:hover {
+  background-color: #409EFF;
+  cursor: pointer;
+}
+.card-small-profile.bg-main .image {
+  background-color: #fff;
 }
 @media (max-width: 720px) {
   .card-small-profile .label {

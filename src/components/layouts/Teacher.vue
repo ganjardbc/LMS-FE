@@ -17,9 +17,10 @@
             <div class="header header-right">
                 <router-link
                     :to="{name: 'login'}" 
-                    :class="`card-small-profile`" 
+                    :class="`card-small-profile bg-main`" 
                     style="height: 40px;">
-                    <div 
+                    <router-link
+                        :to="{name: 'teacher-profile'}" 
                         class="image" 
                         style="text-align: center; width: 40px; height: 40px;">
                         <img 
@@ -30,7 +31,7 @@
                             v-else 
                             class="post-top fa fa-lg fa-user-circle" 
                             style="color: #999;" />
-                    </div>
+                    </router-link>
                 </router-link>
             </div>
         </div>
@@ -123,8 +124,15 @@
                                             style="color: #999;" />
                                     </div>
                                     <div class="fonts fonts-11 semibold black">Ganjar Hadiatna</div>
-                                    <div class="fonts fonts-9 normal black margin margin-bottom-10px">Guru / Pengajar</div>
-                                    <div class="display-flex row center" style="width: 100%;">
+                                    <div class="fonts fonts-9 normal black">Guru / Pengajar</div>
+                                    <div class="margin margin-10px display-flex row align-center">
+                                        <router-link :to="{name: 'teacher-profile'}">
+                                            <button class="btn btn-small btn-sekunder">
+                                                Profil
+                                            </button>
+                                        </router-link>
+                                    </div>
+                                    <div class="display-flex row center margin margin-top-5px" style="width: 100%;">
                                         <div class="width width-50">
                                             <div class="fonts fonts-11 primary semibold align-center">15</div>
                                             <div class="fonts fonts-9 black normal align-center">Kelas</div>

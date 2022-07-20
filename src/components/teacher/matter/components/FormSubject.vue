@@ -29,7 +29,15 @@
                                     </div>
                                 </div>
                                 <div class="width width-160px display-flex flex-end align-center">
-                                    <button class="btn btn-sekunder">
+                                    <button 
+                                        v-if="selectedSubject === dt.id" 
+                                        class="btn btn-primary btn-circle">
+                                        <i class="fa fa-lg fa-check-circle"></i>
+                                    </button>
+                                    <button 
+                                        v-else 
+                                        class="btn btn-sekunder"
+                                        @click="onSelect(dt.id)">
                                         Pilih Mapel
                                     </button>
                                 </div>
@@ -53,10 +61,16 @@ export default {
     computed: {
         ...mapState({
             formMatter: state => state.teacherMatter.form,
-            errorMessage: state => state.teacherMatter.errorMessage
+            errorMessage: state => state.teacherMatter.errorMessage,
+            dataSubject: state => state.teacherMatter.dataSubject,
         }),
-        dataSubject () {
-            return this.formMatter.dataSubject
+        selectedSubject () {
+            return this.formMatter.subject
+        }
+    },
+    methods: {
+        onSelect(value) {
+            this.formMatter.subject = value 
         }
     }
 }

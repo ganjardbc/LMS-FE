@@ -8,14 +8,14 @@
                     <div class="padding padding-bottom-30px padding-top-5px">
                         <div class="card bg-white border-full display-flex align-center">
                             <div 
-                                class="image image-60px bg-size-contain bg-white-grey margin margin-right-15px"
-                                :style="`background-image: url('');`"
+                                class="image image-60px bg-size-contain bg-white margin margin-right-15px"
+                                :style="`background-image: url(${findClassRoom.image});`"
                                 ></div>
                             <div style="width: calc(100% - 235px);">
-                                <div class="fonts fonts-11 black semibold">Kelas 3.A</div>
-                                <div class="fonts fonts-10 grey normal">SMA | Angkatan 2020</div>
+                                <div class="fonts fonts-11 black semibold">{{ findClassRoom.title }}</div>
+                                <div class="fonts fonts-10 grey normal">{{ findClassRoom.description }}</div>
                                 <div class="display-flex flex-left">
-                                    <div class="fonts fonts-10 normal grey"><span class="fonts fonts-10 semibold primary">20</span> Murid</div>
+                                    <div class="fonts fonts-10 normal grey"><span class="fonts fonts-10 semibold primary">{{ findClassRoom.student }}</span> Murid</div>
                                 </div>
                             </div>
                             <div class="width width-160px display-flex flex-end align-center">
@@ -30,13 +30,14 @@
                     <div class="padding padding-bottom-30px padding-top-5px">
                         <div class="card bg-white border-full display-flex align-center">
                             <div 
-                                class="image image-60px bg-size-contain bg-white-grey margin margin-right-15px"
-                                :style="`background-image: url('');`"
+                                class="image image-60px bg-size-contain bg-white margin margin-right-15px"
+                                :style="`background-image: url(${findSubject.image});`"
                                 ></div>
                             <div style="width: calc(100% - 235px);">
-                                <div class="fonts fonts-11 black semibold">Matematika</div>
+                                <div class="fonts fonts-11 black semibold">{{ findSubject.title }}</div>
+                                <div class="fonts fonts-10 grey normal">{{ findSubject.description }}</div>
                                 <div class="display-flex flex-left">
-                                    <div class="fonts fonts-10 normal grey"><span class="fonts fonts-10 semibold primary">15</span> Materi Ajar</div>
+                                    <div class="fonts fonts-10 normal grey"><span class="fonts fonts-10 semibold primary">{{ findSubject.subject }}</span> Materi Ajar</div>
                                 </div>
                             </div>
                             <div class="width width-160px display-flex flex-end align-center">
@@ -64,18 +65,16 @@
                     </div>
 
                     <div class="fonts fonts-11 semibold black">Dokumen</div>
-                    <div class="padding padding-bottom-0">
-                        <div class="padding padding-top-10px padding-bottom-5px">
-                            <div class="fonts fonts-11 semibold black">File</div>
-                            <div class="image image-150px bg-white-grey"></div>
-                        </div>
-                        <div class="padding padding-top-10px padding-bottom-5px">
-                            <div class="fonts fonts-11 semibold black">Tipe File :</div>
-                            <div class="fonts fonts-11 normal black">Audio</div>
-                        </div>
-                        <div class="padding padding-top-10px padding-bottom-5px">
-                            <div class="fonts fonts-11 semibold black">Deskripsi :</div>
-                            <div class="fonts fonts-11 normal black">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                    <div class="padding padding-bottom-30px padding-top-5px">
+                        <div class="card bg-white border-full display-flex align-center">
+                            <div 
+                                class="image image-60px bg-size-contain bg-white-grey margin margin-right-15px"
+                                :style="`background-image: url('');`"
+                                ></div>
+                            <div style="width: calc(100% - 75px);">
+                                <div class="fonts fonts-11 black semibold">PDF</div>
+                                <div class="fonts fonts-10 black normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -84,7 +83,28 @@
     </div>
 </template>
 <script>
+import { mapState } from 'vuex'
 export default {
-    name: 'App'
+    name: 'App',
+    computed: {
+        ...mapState({
+            formMatter: state => state.teacherMatter.form,
+            errorMessage: state => state.teacherMatter.errorMessage,
+            dataClassRoom: state => state.teacherMatter.dataClassRoom,
+            dataSubject: state => state.teacherMatter.dataSubject,
+        }),
+        selectedClassRoom () {
+            return this.formMatter.classRoom 
+        },
+        selectedSubject () {
+            return this.formMatter.subject
+        },
+        findClassRoom () {
+            return this.dataClassRoom.find((item) => item.id === this.selectedClassRoom)
+        },
+        findSubject () {
+            return this.dataSubject.find((item) => item.id === this.selectedSubject)
+        }
+    },
 }
 </script>

@@ -239,7 +239,7 @@
 .card-small-profile {
     position: relative;
     height: 30px;
-    padding: 5px;
+    padding: 3px;
     border-radius: 50px;
     display: flex;
     flex-wrap: nowrap;
@@ -264,6 +264,16 @@
     }
     &.router-link-active {
         background-color: $white-grey;
+    }
+    &.bg-main {
+        background-color: $main-color;
+        &:hover {
+            background-color: $main-color;
+            cursor: pointer;
+        }
+        .image {
+            background-color: #fff;
+        }
     }
     @media (max-width: $min-width) {
         .label {

@@ -94,9 +94,8 @@ export default {
                 {key: 'Alamat', value: 'Lorem ipsum doler ismet'},
             ],
             contacts: [
-                {key: 'WA', value: '089699181669'},
+                {key: 'No. Telpon', value: '089699181669'},
                 {key: 'E-mail', value: 'ganjarhadiatna.gh@gmail.com'},
-                {key: 'Instagram', value: '@ganjar_hadiatna'},
             ],
         }
     }

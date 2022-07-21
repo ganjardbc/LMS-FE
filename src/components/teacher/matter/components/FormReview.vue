@@ -6,7 +6,7 @@
                 <div class="padding padding-top-10px padding-bottom-5px">
                     <div class="fonts fonts-11 semibold black">Ruang Kelas</div>
                     <div class="padding padding-bottom-30px padding-top-5px">
-                        <div class="card bg-white border-full display-flex align-center">
+                        <div v-if="findClassRoom" class="card bg-white border-full display-flex align-center">
                             <div 
                                 class="image image-60px bg-size-contain bg-white margin margin-right-15px"
                                 :style="`background-image: url(${findClassRoom.image});`"
@@ -24,11 +24,14 @@
                                 </button>
                             </div>
                         </div>
+                        <div v-else class="card bg-white border-full display-flex align-center">
+                            <div class="fonts fonts-11 normal black">Ruang kelas belum dipilih</div>
+                        </div>
                     </div>
 
                     <div class="fonts fonts-11 semibold black">Mata Pelajaran</div>
                     <div class="padding padding-bottom-30px padding-top-5px">
-                        <div class="card bg-white border-full display-flex align-center">
+                        <div v-if="findSubject" class="card bg-white border-full display-flex align-center">
                             <div 
                                 class="image image-60px bg-size-contain bg-white margin margin-right-15px"
                                 :style="`background-image: url(${findSubject.image});`"
@@ -45,6 +48,9 @@
                                     <i class="fa fa-lg fa-check-circle"></i>
                                 </button>
                             </div>
+                        </div>
+                        <div v-else class="card bg-white border-full display-flex align-center">
+                            <div class="fonts fonts-11 normal black">Mata pelajaran belum dipilih</div>
                         </div>
                     </div>
 

@@ -37,7 +37,7 @@
                             </div>
                         </div>
                         <div class="width width-100 display-flex row space-between">
-                            <button class="btn btn-center btn-sekunder width width-49">
+                            <button class="btn btn-center btn-sekunder width width-49" @click="toEdit">
                                 <i class="icn icn-left fa fa-lg fa-edit"></i> Edit Materi 
                             </button>
                             <button class="btn btn-center btn-danger width width-49">
@@ -53,7 +53,12 @@
                             <div class="fonts fonts-10 normal grey margin margin-bottom-15px">{{ content.date }}</div>
                             <div class="fonts fonts-11 normal black" v-html="content.description"></div>
                             <div class="padding padding-top-30px">
-                                <div class="fonts fonts-12 semibold black"><span class="fonts primary semibold">{{ content.contents.length }}</span> Dokumen</div>
+                                <div class="display-flex space-between align-center">
+                                    <div class="fonts fonts-12 semibold black"><span class="fonts primary semibold">{{ content.contents.length }}</span> Dokumen</div>
+                                    <!-- <button class="btn btn-main">
+                                        <i class="icn icn-left fa fa-lg fa-plus-circle"></i> Tambah Dokumen
+                                    </button> -->
+                                </div>
                                 <div v-for="(dt, i) in content.contents" :key="i" class="margin margin-bottom-20px margin-top-20px">
                                     <div class="card box-shadow bg-white display-flex row align-center">
                                         <div class="width width-100px">
@@ -66,13 +71,13 @@
                                             <div class="fonts fonts-10 normal grey">{{ dt.fileType }}, {{ dt.date }}</div>
                                             <div class="fonts fonts-10 normal grey"></div>
                                         </div>
-                                        <div class="width width-180px display-flex space-between">
+                                        <div class="width width-180px display-flex flex-end">
                                             <button class="btn btn-sekunder">
                                                 Buka Dokumen
                                             </button>
-                                            <button class="btn btn-circle btn-danger">
+                                            <!-- <button class="btn btn-circle btn-danger">
                                                 <i class="fa fa-lg fa-trash-alt"></i>
-                                            </button>
+                                            </button> -->
                                         </div>
                                     </div>
                                 </div>
@@ -137,6 +142,9 @@ export default {
         onChangeTabs (data) {
             this.activeTabs = data
         },
+        toEdit () {
+            this.$router.push({name: 'teacher-matter-create'})
+        }
     }
 }
 </script>

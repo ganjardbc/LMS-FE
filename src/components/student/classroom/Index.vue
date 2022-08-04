@@ -1,9 +1,7 @@
 <template>
     <div id="app">
         <div class="width width-100">
-            <div class="width width-100">
-                <AppBreadcrumps :data.sync="breadcrumps" :goBack="goBack" />
-            </div>
+            <div class="fonts fonts-32 semibold black">Kelas Saya</div>
             <div class="width width-100 display-flex space-between padding padding-top-30px padding-bottom-15px">
                 <div class="width width-30">
                     <div class="card bg-white display-flex column align-center">
@@ -28,18 +26,19 @@
                 <div class="width width-67">
                     <AppTabs 
                         :isScrollable="false"
-                        :selectedIndex.sync="activeTabs" 
+                        :selectedIndex="activeIndex" 
                         :data="tabs" 
                         :onChange="(data) => onChangeTabs(data)" 
                         class="width width-48 margin margin-bottom-15-px" />
-                    <DetailSubject v-if="activeTabs === 0" />
-                    <DetailStudent v-if="activeTabs === 1" />
+                    <DetailSubject v-if="activeIndex === 0" />
+                    <DetailStudent v-if="activeIndex === 1" />
                 </div>
             </div>
         </div>
     </div>
 </template>
 <script>
+import { mapState, mapActions } from 'vuex'
 import classRoomImage from '../../../assets/img/classroom-3.jpeg'
 import AppBreadcrumps from '../../modules/AppBreadcrumps'
 import AppTabs from '../../modules/AppTabs'
@@ -48,7 +47,6 @@ import DetailStudent from './DetailStudent'
 export default {
     data () {
         return {
-            activeTabs: 0,
             cover: classRoomImage,
             form : {
                 search: ''
@@ -58,11 +56,14 @@ export default {
                 {label: 'Daftar Murid', status: ''}
             ],
             dashboard: [
-                // {id: 3, icon: 'fa fa-lg fa-graduation-cap', title: 'Guru Pengajar', value: '3'},
+                {id: 3, icon: 'fa fa-lg fa-graduation-cap', title: 'Guru Pengajar', value: '3'},
                 {id: 2, icon: 'fa fa-lg fa-book-open', title: 'Jumlah Mapel', value: '23'},
                 {id: 3, icon: 'fa fa-lg fa-graduation-cap', title: 'Jumlah Murid', value: '77'},
             ]
         }
+    },
+    mounted () {
+        this.setActiveTabs(this.activeIndex)
     },
     components: {
         AppBreadcrumps,
@@ -71,6 +72,9 @@ export default {
         DetailStudent
     },
     computed: {
+        ...mapState({
+            activeIndex: state => state.studentClassRoom.activeIndex
+        }),
         classRoomId () {
             return this.$route.params.id
         },
@@ -82,12 +86,23 @@ export default {
         }
     },
     methods: {
+        ...mapActions({
+            onActiveIndex: 'studentClassRoom/onActiveIndex'
+        }),
         goBack () {
             this.$router.back()
         },
         onChangeTabs (data) {
-            this.activeTabs = data
+            this.onActiveIndex(data)
         },
+        setActiveTabs (data) {
+            this.tabs = this.tabs.map((dt, i) => {
+                return {
+                    ...dt,
+                    status: i === data ? 'active' : ''
+                }
+            })
+        }
     }
 }
 </script>

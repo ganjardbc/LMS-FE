@@ -33,7 +33,7 @@
                                     <i class="icn icn-left fa fa-lg fa-edit"></i> Edit  
                                 </button>
                                 <button class="btn btn-full btn-left btn-white">
-                                    <i class="icn icn-left fa fa-lg fa-sign-out-alt"></i> Hapus 
+                                    <i class="icn icn-left fa fa-lg fa-trash-alt"></i> Hapus 
                                 </button>
                             </div>
                             <button 
@@ -74,7 +74,7 @@
                                     <i class="icn icn-left fa fa-lg fa-edit"></i> Edit  
                                 </button>
                                 <button class="btn btn-full btn-left btn-white">
-                                    <i class="icn icn-left fa fa-lg fa-sign-out-alt"></i> Hapus 
+                                    <i class="icn icn-left fa fa-lg fa-trash-alt"></i> Hapus 
                                 </button>
                             </div>
                             <button 

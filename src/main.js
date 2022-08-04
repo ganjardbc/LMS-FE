@@ -11,9 +11,14 @@ import 'element-ui/lib/theme-chalk/base.css'
 import 'element-ui/lib/theme-chalk/display.css'
 import "./assets/sass/app.css"
 import "./assets/icons/fontawesome/css/all.min.css"
+import AudioPlayer from '@liripeng/vue-audio-player'
+import VueVideoPlayer from 'vue-video-player'
+import 'video.js/dist/video-js.css'
 
 // Vue.use(VCalendar)
 Vue.use(ElementUI)
+Vue.use(AudioPlayer)
+Vue.use(VueVideoPlayer)
 
 Vue.config.productionTip = false
 

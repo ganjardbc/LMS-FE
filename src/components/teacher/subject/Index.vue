@@ -17,15 +17,12 @@
                         <div class="card-capsule active margin margin-10px">
                             <i class="icn fonts fonts-6 green fa fa-lw fa-circle"></i> Active
                         </div>
-                        <div class="width width-100 display-flex space-between padding padding-top-5px padding-bottom-30px">
+                        <div class="width width-100 display-flex space-between padding padding-top-5px padding-bottom-15px">
                             <div v-for="(dt, i) in dashboard" :key="i" class="width width-95 display-flex column align-center">
                                 <div class="fonts fonts-22 semibold primary align-center">{{ dt.value }}</div>
                                 <div class="fonts fonts-10 normal black align-center">{{ dt.title }}</div>
                             </div>
                         </div>
-                        <router-link :to="{name: 'teacher-matter-create'}" class="btn btn-main btn-full-padding">
-                            <i class="icn icn-left fa fa-lg fa-plus-circle"></i> Upload Materi Ajar
-                        </router-link>
                     </div>
                 </div>
                 <div class="width width-67">

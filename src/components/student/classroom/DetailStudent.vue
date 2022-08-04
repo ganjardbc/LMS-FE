@@ -1,9 +1,8 @@
 <template>
     <div id="App">
-        <div class="fonts fonts-32 semibold black">Materi Ajar</div>
         <div class="display-flex space-between align-center padding padding-top-15px padding-bottom-15px">
             <div class="width width-40 display-flex">
-                <el-input placeholder="Cari materi ajar" v-model="formFilter.search" class="input-with-select">
+                <el-input placeholder="Cari murid" v-model="formFilter.search" class="input-with-select">
                     <el-button slot="append" icon="el-icon-search"></el-button>
                 </el-input>
             </div>
@@ -29,17 +28,14 @@
                         <i class="icn icn-left fa fa-lg fa-filter"></i> Filter
                     </button>
                 </el-popover>
-                <router-link :to="{name: 'teacher-matter-create'}" class="btn btn-main" style="margin-left: 5px;">
-                    <i class="icn icn-left fa fa-lg fa-plus-circle"></i> Upload Materi Ajar
-                </router-link>
             </div>
         </div>
-        <CardMatter :isGridView.sync="isGridView" :data.sync="data" />
+        <CardStudent :isGridView.sync="isGridView" :data.sync="students" />
     </div>
 </template>
 <script>
 import { mapState, mapActions } from 'vuex'
-import CardMatter from './components/CardMatter'
+import CardStudent from './components/CardStudent'
 export default {
     name: 'App',
     data () {
@@ -47,28 +43,28 @@ export default {
     },
     computed: {
         ...mapState({
-            detailSubject: state => state.teacherClassRoom.detail.matter
+            detailStudent: state => state.teacherClassRoom.detail.student 
         }),
         formFilter () {
-            return this.detailSubject.formFilter
+            return this.detailStudent.formFilter
         },
         isGridView () {
-            return this.detailSubject.isGridView
+            return this.detailStudent.isGridView
         },
-        data () {
-            return this.detailSubject.data 
+        students () {
+            return this.detailStudent.data 
         }
     },
     methods: {
         ...mapActions({
-            onChangeMattertGridView: 'teacherClassRoom/onChangeMattertGridView'
+            onChangeStudentGridView: 'teacherClassRoom/onChangeStudentGridView'
         }),
         changeGridView () {
-            this.onChangeMattertGridView(!this.isGridView)
+            this.onChangeStudentGridView(!this.isGridView)
         }
     },
     components: {
-        CardMatter
+        CardStudent
     }
 }
 </script>

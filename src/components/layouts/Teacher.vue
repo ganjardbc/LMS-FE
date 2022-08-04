@@ -16,11 +16,10 @@
             </div>
             <div class="header header-right">
                 <router-link
-                    :to="{name: 'login'}" 
+                    :to="{name: 'teacher-profile'}" 
                     :class="`card-small-profile bg-main`" 
                     style="height: 40px;">
-                    <router-link
-                        :to="{name: 'teacher-profile'}" 
+                    <div 
                         class="image" 
                         style="text-align: center; width: 40px; height: 40px;">
                         <img 
@@ -31,7 +30,7 @@
                             v-else 
                             class="post-top fa fa-lg fa-user-circle" 
                             style="color: #999;" />
-                    </router-link>
+                    </div>
                 </router-link>
             </div>
         </div>

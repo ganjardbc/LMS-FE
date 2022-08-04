@@ -131,14 +131,23 @@ export default {
         AppViewDocument,
     },
     computed: {
+        classId () {
+            return this.$route.params.classId
+        },
         subjectId () {
-            return this.$route.params.id
+            return this.$route.params.subjectId
+        },
+        matterId () {
+            return this.$route.params.subjectId
         },
         breadcrumps () {
             return [
+                {title: 'Ruang Kelas', active: false},
+                {title: this.classId, active: false},
+                {title: 'Mata Pelajaran', active: false},
+                {title: this.subjectId, active: false},
                 {title: 'Materi Ajar', active: false},
-                {title: 'Detail', active: false},
-                {title: this.subjectId, active: true},
+                {title: this.matterId, active: true},
             ]
         }
     },

@@ -3,6 +3,7 @@ import Home from '@/components/student/Index.vue'
 import ClassRoom from '@/components/student/classroom/Index.vue'
 import DetailClassSubject from '@/components/student/classroom/DetailClassSubject'
 import DetailClassStudent from '@/components/student/classroom/DetailClassStudent'
+import DetailClassMatter from '@/components/student/classroom/DetailClassMatter'
 import Matter from '@/components/student/matter/Index.vue'
 import MatterDetail from '@/components/student/matter/Detail.vue'
 import Profile from '@/components/student/profile/Index.vue'
@@ -25,6 +26,11 @@ const routes = {
             name: 'student-class-subject-detail',
             path: '/student-class/subject/:classId/:subjectId',
             component: DetailClassSubject
+        },
+        {
+            name: 'student-class-matter-detail',
+            path: '/student-class/subject/:classId/:subjectId/:matterId',
+            component: DetailClassMatter
         },
         {
             name: 'student-class-student-detail',

@@ -41,7 +41,7 @@
                                 <i class="icn icn-left fa fa-lg fa-edit"></i> Edit Materi 
                             </button>
                             <button class="btn btn-center btn-danger width width-49">
-                                <i class="icn icn-left fa fa-lg fa-trash-alt"></i> Hapur Materi  
+                                <i class="icn icn-left fa fa-lg fa-trash-alt"></i> Hapus Materi  
                             </button>
                         </div>
                     </div>

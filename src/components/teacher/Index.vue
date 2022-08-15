@@ -1,98 +1,122 @@
 <template>
     <div id="app">
         <div class="width width-100">
-            <div class="fonts fonts-32 semibold black">Dashboard</div>
-            <div class="display-flex space-between wrap padding padding-bottom-15px padding-top-15px">
-                <div v-for="(dt, i) in metrics" :key="i" class="width width-32">
-                    <div class="card bg-white box-shadow display-flex column center">
-                        <div class="padding padding-5px display-flex row space-between align-center">
-                            <div class="width width-70">
-                                <div class="fonts fonts-10 black normal">{{ dt.title }}</div>
-                                <div class="fonts fonts-22 primary semibold">{{ dt.value }}</div>
-                            </div>
-                            <div class="width width-30 display-flex right">
-                                <i :class="`fonts fonts-32 teal ${dt.icon}`"></i>
-                            </div>
+            <div class="fonts fonts-32 semibold black">Daftar Kelas</div>
+            <div class="display-flex space-between align-center padding padding-top-15px padding-bottom-15px">
+                <div class="width width-30 display-flex">
+                    <el-input placeholder="Cari kelas" v-model="formFilter.search" class="classroom-input-with-select">
+                        <el-button slot="append" icon="el-icon-search"></el-button>
+                    </el-input>
+                </div>
+                <div class="width width-70 display-flex right">
+                    <button 
+                        slot="reference"
+                        class="btn btn-sekunder" 
+                        style="margin-left: 5px;"
+                        @click="changeGridView">
+                        <i :class="`icn fa fa-lg ${isGridView ? 'fa-th-large' : 'fa-th-list'}`"></i>
+                    </button>
+                    <el-popover
+                        placement="bottom-end"
+                        width="200"
+                        trigger="click">
+                        <div>
+                            URUTKAN 
                         </div>
-                    </div>
+                        <button 
+                            slot="reference"
+                            class="btn btn-sekunder" 
+                            style="margin-left: 5px;">
+                            <i class="icn icn-left fa fa-lg fa-sort"></i> Urutkan
+                        </button>
+                    </el-popover>
+                    <el-popover
+                        placement="bottom-end"
+                        width="200"
+                        trigger="click">
+                        <div>
+                            FILTER 
+                        </div>
+                        <button 
+                            slot="reference"
+                            class="btn btn-sekunder" 
+                            style="margin-left: 5px;">
+                            <i class="icn icn-left fa fa-lg fa-filter"></i> Filter
+                        </button>
+                    </el-popover>
                 </div>
             </div>
-            <div class="display-flex space-between wrap padding padding-bottom-15px padding-top-15px">
-                <div class="width width-49">
-                    <div class="padding padding-0">
-                        <div class="card bg-white box-shadow display-flex column center">
-                            <div class="fonts fonts-14 semibold black">Ruang Kelas</div>
-                            <div class="card-content-max padding padding-left-5px padding-right-5px">
-                                <div v-for="(dt, i) in classRooms" :key="i" class="padding padding-top-15px padding-bottom-15px">
-                                    <div class="card bg-white border-full display-flex align-center">
-                                        <div 
-                                            class="image image-60px bg-size-contain bg-white margin margin-right-15px"
-                                            :style="`background-image: url(${dt.image});`"
-                                            ></div>
-                                        <div style="width: calc(100% - 175px);">
-                                            <div class="fonts fonts-11 black semibold">{{ dt.title }}</div>
-                                            <div class="display-flex flex-left">
-                                                <div class="fonts fonts-10 normal grey"><span class="fonts fonts-10 semibold primary">{{ dt.subject }}</span> Materi Ajar</div>
-                                            </div>
-                                        </div>
-                                        <div class="width width-100px display-flex flex-end align-center">
-                                            <div class="card-capsule active margin margin-right-15px">
-                                                <i class="icn fonts fonts-6 green fa fa-lw fa-circle"></i> Active
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="width width-49">
-                    <div class="padding padding-0">
-                        <div class="card bg-white box-shadow display-flex column center">
-                            <div class="fonts fonts-14 semibold black">Mata Pelajaran</div>
-                            <div class="card-content-max padding padding-left-5px padding-right-5px">
-                                <div v-for="(dt, i) in subjects" :key="i" class="padding padding-top-15px padding-bottom-15px">
-                                    <div class="card bg-white border-full display-flex align-center">
-                                        <div 
-                                            class="image image-60px bg-size-contain bg-white margin margin-right-15px"
-                                            :style="`background-image: url(${dt.image});`"
-                                            ></div>
-                                        <div style="width: calc(100% - 175px);">
-                                            <div class="fonts fonts-11 black semibold">{{ dt.title }}</div>
-                                            <div class="display-flex flex-left">
-                                                <div class="fonts fonts-10 normal grey"><span class="fonts fonts-10 semibold primary">{{ dt.subject }}</span> Materi Ajar</div>
-                                            </div>
-                                        </div>
-                                        <div class="width width-100px display-flex flex-end align-center">
-                                            <div class="card-capsule active margin margin-right-15px">
-                                                <i class="icn fonts fonts-6 green fa fa-lw fa-circle"></i> Active
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <AppTabs 
+                :isScrollable="false"
+                :selectedIndex.sync="activeTabs" 
+                :data="tabs" 
+                :onChange="(data) => onChangeTabs(data)" 
+                class="width width-300px margin margin-bottom-15-px" />
+            <div v-if="activeTabs === 0">
+                <Card :isGridView.sync="isGridView" :data.sync="dataSMA" />
+            </div>
+            <div v-if="activeTabs === 1">
+                <Card :isGridView.sync="isGridView" :data.sync="dataSMP" />
             </div>
         </div>
     </div>
 </template>
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
+import Card from './components/Card'
+import AppTabs from '../modules/AppTabs'
 export default {
     data () {
-        return {}
-    },
-    mounted () {
-        console.log('classRoom', this.classRoom)
+        return {
+            activeTabs: 0,
+            tabs: [
+                {label: 'SMA', status: 'active'},
+                {label: 'SMP', status: ''}
+            ],
+        }
     },
     computed: {
         ...mapState({
-            metrics: state => state.teacherDashboard.metrics,
-            subjects: state => state.teacherDashboard.subjects,
-            classRooms: state => state.teacherDashboard.classRooms 
+            classRoom: state => state.teacherClassRoom
         }),
+        formFilter () {
+            return this.classRoom.formFilter
+        },
+        isGridView () {
+            return this.classRoom.isGridView
+        },
+        data () {
+            return this.classRoom.data 
+        },
+        dataSMA () {
+            return this.classRoom.data.filter((e) => e.type === 'SMA')
+        },
+        dataSMP () {
+            return this.classRoom.data.filter((e) => e.type === 'SMP')
+        }
+    },
+    methods: {
+        ...mapActions({
+            onChangeGridView: 'teacherClassRoom/onChangeGridView'
+        }),
+        changeGridView () {
+            this.onChangeGridView(!this.isGridView)
+        },
+        onChangeTabs (data) {
+            this.activeTabs = data
+        },
+    },
+    components: {
+        AppTabs,
+        Card
     }
 }
 </script>
+<style>
+    .classroom-input-with-select .el-select .el-input {
+        width: 150px;
+    }
+    .classroom-input-with-select .el-input-group__prepend {
+        background-color: #fff;
+    }
+</style>

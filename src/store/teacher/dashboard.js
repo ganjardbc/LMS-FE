@@ -3,8 +3,8 @@ export default {
     namespaced: true,
     state: {
         metrics: [
-            {id: 1, icon: 'fa fa-lg fa-chalkboard-teacher', title: 'Ruang Kelas', value: '15'},
-            {id: 2, icon: 'fa fa-lg fa-book-open', title: 'Mata Pelajaran', value: '23'},
+            {id: 2, icon: 'fa fa-lg fa-book-open', title: 'Jumlah Tugas', value: '23'},
+            {id: 1, icon: 'fa fa-lg fa-chalkboard-teacher', title: 'Jumlah Guru', value: '15'},
             {id: 3, icon: 'fa fa-lg fa-graduation-cap', title: 'Jumlah Murid', value: '77'}
         ],
         subjects: [

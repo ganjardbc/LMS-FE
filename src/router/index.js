@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import routeAuth from './auth'
 import routeAdmin from './admin'
 import routeTeacher from './teacher'
+import routeClassRoom from './classRoom'
 import routeStudent from './student'
 
 Vue.use(Router)
@@ -13,6 +14,7 @@ export default new Router({
     { ...routeAuth },
     { ...routeAdmin },
     { ...routeTeacher },
+    { ...routeClassRoom },
     { ...routeStudent }
   ],
   base: process.env.BASE_URL,

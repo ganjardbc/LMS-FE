@@ -39,15 +39,21 @@ a {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     #header {
-        position: fixed;
-        top: 0;
-        left: 0;
+        position: relative;
         width: 100%;
         height: 60px;
         background-color: #fff;
-        box-shadow: $shadow;
-        z-index: 100;
         #header-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background-color: #fff;
+            box-shadow: $shadow;
+            z-index: 100;
+        }
+        #header-main {
             width: $max-width;
             height: 60px;
             margin: auto;
@@ -64,7 +70,8 @@ a {
         line-height: 1.5;
     }
     #body {
-        padding-top: 60px;
+        padding-top: 30px;
+        padding-bottom: 30px;
     }
     #footer {
         position: relative;

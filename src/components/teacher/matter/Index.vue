@@ -1,10 +1,10 @@
 <template>
     <div id="app">
         <div class="width width-100">
-            <div class="fonts fonts-32 semibold black">Materi Ajar</div>
+            <div class="fonts fonts-32 semibold black">Daftar Tugas</div>
             <div class="display-flex space-between align-center padding padding-top-15px padding-bottom-15px">
                 <div class="width width-30 display-flex">
-                    <el-input placeholder="Cari materi ajar" v-model="formFilter.search" class="subject-input-with-select">
+                    <el-input placeholder="Cari tugas" v-model="formFilter.search" class="subject-input-with-select">
                         <el-button slot="append" icon="el-icon-search"></el-button>
                     </el-input>
                 </div>
@@ -48,7 +48,7 @@
                         :to="{name: 'teacher-matter-create'}" 
                         class="btn btn-main" 
                         style="margin-left: 5px;">
-                        <i class="icn icn-left fa fa-lg fa-plus-circle"></i> Upload Materi Ajar
+                        <i class="icn icn-left fa fa-lg fa-plus-circle"></i> Upload Tugas
                     </router-link>
                 </div>
             </div>

@@ -3,7 +3,7 @@
         <div class="sidebar show">
             <div class="header header-left">
                 <div class="width width-80 display-flex center align-center">
-                    <router-link :to="{name: 'teacher-home'}" class="logo">
+                    <router-link :to="{name: 'student-home'}" class="logo">
                         <img :src="logo" alt="" style="width: 100%;">
                     </router-link>
                 </div>

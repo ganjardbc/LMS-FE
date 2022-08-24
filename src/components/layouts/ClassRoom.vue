@@ -3,7 +3,7 @@
         <div class="sidebar show">
             <div class="header header-left">
                 <div class="width width-80 display-flex center align-center">
-                    <router-link :to="{name: 'teacher-home'}" class="logo">
+                    <router-link :to="{name: 'class-room-home'}" class="logo">
                         <img :src="logo" alt="" style="width: 100%;">
                     </router-link>
                 </div>
@@ -16,7 +16,7 @@
             </div>
             <div class="header header-right">
                 <router-link
-                    :to="{name: 'teacher-profile'}" 
+                    :to="{name: 'class-room-profile'}" 
                     :class="`card-small-profile bg-main`" 
                     style="height: 40px;">
                     <div 
@@ -159,10 +159,9 @@ export default {
                 {id: 3, icon: 'fa fa-lg fa-graduation-cap', title: 'Jumlah Kelas', value: '77'}
             ],
             sidebar: [
-                {icon: 'fa fa-lg fa-shapes', label: 'Dashboard', value: 0, link: 'teacher-dashboard', permission: 'dashboard'},
-                {icon: 'fa fa-lg fa-book-open', label: 'Daftar Tugas', value: 0, link: 'teacher-matter', permission: 'dashboard'},
-                {icon: 'fa fa-lg fa-chalkboard-teacher', label: 'Daftar Guru', value: 0, link: 'login', permission: 'dashboard'},
-                {icon: 'fa fa-lg fa-graduation-cap', label: 'Daftar Murid', value: 0, link: 'login', permission: 'dashboard'},
+                {icon: 'fa fa-lg fa-shapes', label: 'Dashboard', value: 0, link: 'class-room-dashboard', permission: 'dashboard'},
+                {icon: 'fa fa-lg fa-book-open', label: 'Daftar Tugas', value: 0, link: 'class-room-matter', permission: 'dashboard'},
+                {icon: 'fa fa-lg fa-graduation-cap', label: 'Daftar Murid', value: 0, link: 'class-room-student', permission: 'dashboard'},
             ]
         }
     },

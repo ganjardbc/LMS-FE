@@ -1,12 +1,10 @@
 import StudentLayout from '@/components/layouts/Student.vue'
 import Home from '@/components/student/Index.vue'
-import ClassRoom from '@/components/student/classroom/Index.vue'
-import DetailClassSubject from '@/components/student/classroom/DetailClassSubject'
-import DetailClassStudent from '@/components/student/classroom/DetailClassStudent'
-import DetailClassMatter from '@/components/student/classroom/DetailClassMatter'
+import Profile from '@/components/student/profile/Index.vue'
 import Matter from '@/components/student/matter/Index.vue'
 import MatterDetail from '@/components/student/matter/Detail.vue'
-import Profile from '@/components/student/profile/Index.vue'
+import Student from '@/components/student/student/Index.vue'
+import StudentDetail from '@/components/student/student/Detail.vue'
 
 const routes = {
     path: '/student',
@@ -14,44 +12,38 @@ const routes = {
     children: [
         {
             name: 'student-home',
-            path: '/',
+            path: 'dashboard',
             component: Home
         },
         {
-            name: 'student-class',
-            path: '/student-class',
-            component: ClassRoom
+            name: 'student-profile',
+            path: 'profile',
+            component: Profile
         },
-        {
-            name: 'student-class-subject-detail',
-            path: '/student-class/subject/:classId/:subjectId',
-            component: DetailClassSubject
-        },
-        {
-            name: 'student-class-matter-detail',
-            path: '/student-class/subject/:classId/:subjectId/:matterId',
-            component: DetailClassMatter
-        },
-        {
-            name: 'student-class-student-detail',
-            path: '/student-class/student/:classId/:studentId',
-            component: DetailClassStudent
-        },
+
+        // MATTER
         {
             name: 'student-matter',
-            path: '/student-matter',
+            path: 'matter',
             component: Matter
         },
         {
             name: 'student-matter-detail',
-            path: '/student-matter/detail/:id',
+            path: 'matter/detail/:id',
             component: MatterDetail
         },
+
+        // STUDENT
         {
-            name: 'student-profile',
-            path: '/student-profile',
-            component: Profile
-        }
+            name: 'student-list',
+            path: 'list',
+            component: Student
+        },
+        {
+            name: 'student-list-detail',
+            path: 'list/detail/:idStudent',
+            component: StudentDetail
+        },
     ]
 }
 

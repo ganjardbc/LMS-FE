@@ -44,6 +44,12 @@
                             <i class="icn icn-left fa fa-lg fa-filter"></i> Filter
                         </button>
                     </el-popover>
+                    <router-link
+                        :to="{name: 'class-room-matter-create'}" 
+                        class="btn btn-main" 
+                        style="margin-left: 5px;">
+                        <i class="icn icn-left fa fa-lg fa-plus-circle"></i> Upload Tugas
+                    </router-link>
                 </div>
             </div>
             <Card :isGridView.sync="isGridView" :data.sync="data" />
@@ -59,7 +65,7 @@ export default {
     },
     computed: {
         ...mapState({
-            subject: state => state.studentMatter
+            subject: state => state.teacherMatter
         }),
         formFilter () {
             return this.subject.formFilter
@@ -73,13 +79,13 @@ export default {
     },
     methods: {
         ...mapActions({
-            onChangeGridView: 'studentMatter/onChangeGridView'
+            onChangeGridView: 'teacherMatter/onChangeGridView'
         }),
         changeGridView () {
             this.onChangeGridView(!this.isGridView)
         },
         toCreateForm () {
-            this.$router.push({name: 'teacher-matter-create'})
+            this.$router.push({name: 'class-room-matter-create'})
         }
     },
     components: {

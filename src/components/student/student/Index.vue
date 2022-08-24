@@ -1,10 +1,10 @@
 <template>
     <div id="app">
         <div class="width width-100">
-            <div class="fonts fonts-32 semibold black">Daftar Tugas</div>
+            <div class="fonts fonts-32 semibold black">Daftar Murid</div>
             <div class="display-flex space-between align-center padding padding-top-15px padding-bottom-15px">
                 <div class="width width-30 display-flex">
-                    <el-input placeholder="Cari tugas" v-model="formFilter.search" class="subject-input-with-select">
+                    <el-input placeholder="Cari murid" v-model="formFilter.search" class="subject-input-with-select">
                         <el-button slot="append" icon="el-icon-search"></el-button>
                     </el-input>
                 </div>
@@ -59,7 +59,7 @@ export default {
     },
     computed: {
         ...mapState({
-            subject: state => state.studentMatter
+            subject: state => state.studentList
         }),
         formFilter () {
             return this.subject.formFilter
@@ -73,14 +73,11 @@ export default {
     },
     methods: {
         ...mapActions({
-            onChangeGridView: 'studentMatter/onChangeGridView'
+            onChangeGridView: 'studentList/onChangeGridView'
         }),
         changeGridView () {
             this.onChangeGridView(!this.isGridView)
         },
-        toCreateForm () {
-            this.$router.push({name: 'teacher-matter-create'})
-        }
     },
     components: {
         Card

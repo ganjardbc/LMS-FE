@@ -40,7 +40,7 @@
                     <div class="width width-30">
                         <el-input
                             class="main-header-search"
-                            placeholder="Cari materi ajar"
+                            placeholder="Cari tugas atau murid"
                             v-model="search">
                             <i slot="prefix" class="el-input__icon el-icon-search"></i>
                         </el-input>
@@ -113,11 +113,9 @@ export default {
                 {id: 3, icon: 'fa fa-lg fa-graduation-cap', title: 'Jumlah Kelas', value: '77'}
             ],
             sidebar: [
-                {icon: 'fa fa-lg fa-shapes', label: 'Dashboard', value: 0, link: 'student-home', permission: 'dashboard'},
-                {icon: 'fa fa-lg fa-graduation-cap', label: 'Kelas Saya', value: 0, link: 'student-class', permission: 'dashboard'},
-                {icon: 'fa fa-lg fa-book-open', label: 'Materi Ajar', value: 0, link: 'student-matter', permission: 'dashboard'},
-                // {icon: 'fa fa-lg fa-graduation-cap', label: 'Daftar Murid', value: 0, link: 'login', permission: 'dashboard'},
-                // {icon: 'fa fa-lg fa-comments', label: 'Notifikasi', value: 0, link: 'login', permission: 'dashboard'},
+                {icon: 'fa fa-lg fa-shapes', label: 'Kelas Saya', value: 0, link: 'student-home', permission: 'dashboard'},
+                {icon: 'fa fa-lg fa-book-open', label: 'Daftar Tugas', value: 0, link: 'student-matter', permission: 'dashboard'},
+                {icon: 'fa fa-lg fa-graduation-cap', label: 'Daftar Murid', value: 0, link: 'student-list', permission: 'dashboard'},
             ]
         }
     },

@@ -1,56 +1,54 @@
 import ClassRoomLayout from '@/components/layouts/ClassRoom.vue'
-import Dashboard from '@/components/teacher/dashboard/Index.vue'
-import Profile from '@/components/teacher/profile/Index.vue'
-import ClassDetail from '@/components/teacher/classroom/Detail.vue'
-import Subject from '@/components/teacher/subject/Index.vue'
-import SubjectDetailMatter from '@/components/teacher/subject/DetailSubjectMatter.vue'
-import Matter from '@/components/teacher/matter/Index.vue'
-import MatterCreate from '@/components/teacher/matter/Form.vue'
-import MatterDetail from '@/components/teacher/matter/Detail.vue'
+import Dashboard from '@/components/classRoom/dashboard/Index.vue'
+import Profile from '@/components/classRoom/profile/Index.vue'
+import Matter from '@/components/classRoom/matter/Index.vue'
+import MatterCreate from '@/components/classRoom/matter/Form.vue'
+import MatterDetail from '@/components/classRoom/matter/Detail.vue'
+import Student from '@/components/classRoom/student/Index.vue'
+import StudentDetail from '@/components/classRoom/student/Detail.vue'
 
 const routes = {
-    path: '/teacher/class/:id/',
+    path: '/class-room/:id/',
     component: ClassRoomLayout,
     children: [
         {
-            name: 'teacher-dashboard',
+            name: 'class-room-dashboard',
             path: 'dashboard',
             component: Dashboard
         },
         {
-            name: 'teacher-profile',
-            path: 'teacher-profile',
+            name: 'class-room-profile',
+            path: 'profile',
             component: Profile
         },
+
+        // MATTER
         {
-            name: 'teacher-class-detail',
-            path: 'detail/:id',
-            component: ClassDetail
-        },
-        {
-            name: 'teacher-subject',
-            path: 'detail/:classId/subject/:subjectId',
-            component: Subject
-        },
-        {
-            name: 'teacher-subject-matter',
-            path: 'detail/:classId/subject/:subjectId/matter/:matterId',
-            component: SubjectDetailMatter
-        },
-        {
-            name: 'teacher-matter',
+            name: 'class-room-matter',
             path: 'matter',
             component: Matter
         },
         {
-            name: 'teacher-matter-detail',
-            path: 'teacher-matter/detail/:id',
-            component: MatterDetail
+            name: 'class-room-matter-create',
+            path: 'matter/create',
+            component: MatterCreate
         },
         {
-            name: 'teacher-matter-create',
-            path: 'matter-create',
-            component: MatterCreate
+            name: 'class-room-matter-detail',
+            path: 'matter/detail/:idMatter',
+            component: MatterDetail
+        },
+
+        // STUDENT
+        {
+            name: 'class-room-student',
+            path: 'student',
+            component: Student
+        },
+        {
+            name: 'class-room-student-detail',
+            path: 'student/detail/:idStudent',
+            component: StudentDetail
         },
     ]
 }

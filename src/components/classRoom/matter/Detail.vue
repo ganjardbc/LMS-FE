@@ -36,6 +36,14 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="width width-100 display-flex row space-between">
+                            <button class="btn btn-center btn-sekunder width width-49" @click="toEdit">
+                                <i class="icn icn-left fa fa-lg fa-edit"></i> Edit Materi 
+                            </button>
+                            <button class="btn btn-center btn-danger width width-49">
+                                <i class="icn icn-left fa fa-lg fa-trash-alt"></i> Hapur Materi  
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="width width-67">
@@ -47,6 +55,9 @@
                             <div class="padding padding-top-30px">
                                 <div class="display-flex space-between align-center">
                                     <div class="fonts fonts-12 semibold black"><span class="fonts primary semibold">{{ content.contents.length }}</span> Dokumen</div>
+                                    <!-- <button class="btn btn-main">
+                                        <i class="icn icn-left fa fa-lg fa-plus-circle"></i> Tambah Dokumen
+                                    </button> -->
                                 </div>
                                 <div v-for="(dt, i) in content.contents" :key="i" class="margin margin-bottom-20px margin-top-20px">
                                     <div class="card box-shadow bg-white display-flex row align-center">
@@ -117,7 +128,7 @@ export default {
     },
     components: {
         AppBreadcrumps,
-        AppViewDocument
+        AppViewDocument,
     },
     computed: {
         subjectId () {
@@ -139,13 +150,12 @@ export default {
             this.activeTabs = data
         },
         toEdit () {
-            this.$router.push({name: 'teacher-matter-create'})
+            this.$router.push({name: 'class-room-matter-create'})
         },
         onCloseDocument (data) {
             this.visibleDocument = !this.visibleDocument
             this.selectedDocument = data 
         },
-
     }
 }
 </script>

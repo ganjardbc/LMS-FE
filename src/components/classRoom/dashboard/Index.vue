@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <div class="width width-100">
-            <div class="fonts fonts-32 semibold black">Kelas Saya</div>
+            <div class="fonts fonts-32 semibold black">Dashboard</div>
             <div class="display-flexs space-between wrap padding padding-bottom-15px padding-top-15px">
                 <div class="width width-100 padding padding-bottom-15px padding-top-15px">
                     <div class="card bg-white box-shadow">
@@ -97,7 +97,7 @@
 </template>
 <script>
 import { mapState } from 'vuex'
-import classRoomImage from '../../assets/img/classroom-3.jpeg'
+import classRoomImage from '../../../assets/img/classroom-3.jpeg'
 
 export default {
     data () {

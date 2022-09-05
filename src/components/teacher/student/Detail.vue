@@ -1,27 +1,25 @@
 <template>
-    <div id="App">
+    <div id="app">
         <div class="width width-100">
-            <div class="fonts fonts-32 semibold black">Profil</div>
+            <div class="width width-100">
+                <AppBreadcrumps :data.sync="breadcrumps" :goBack="goBack" />
+            </div>
             <div class="width width-100 display-flex space-between padding padding-top-30px padding-bottom-15px">
                 <div class="width width-30">
                     <div class="card bg-white box-shadow">
                         <div class="width width-100 padding padding-top-10px">
-                            <div class="display-flex column align-center">
+                            <div class="display-flex column align-center padding padding-bottom-10px">
                                 <div 
                                     class="image image-circle image-150px margin margin-bottom-10px"
-                                    style="text-align: center;">
+                                    :style="`text-align: center; background-image: url(${image});`">
                                     <i 
                                         v-if="!image"
                                         class="post-top fa fa-4x fa-user-circle" 
                                         style="color: #999;" />
                                 </div>
                                 <div class="fonts fonts-12 semibold black">Ganjar Hadiatna</div>
-                                <div class="fonts fonts-10 normal black">Guru / Pengajar</div>
+                                <div class="fonts fonts-10 normal black">SMA</div>
                             </div>
-                            <div class="margin margin-bottom-15px padding padding-top-15px border-bottom"></div>
-                            <button class="btn btn-white btn-full btn-center">
-                                <i class="fonts red icn icn-left fa fa-lg fa-power-off"></i> Logout
-                            </button>
                         </div>
                     </div>
                 </div>
@@ -68,22 +66,58 @@
     </div>
 </template>
 <script>
+import classRoomImage from '../../../assets/img/classroom.jpg'
+import AppBreadcrumps from '../../modules/AppBreadcrumps'
 export default {
-    name: 'App',
     data () {
         return {
-            image: '',
+            image: classRoomImage,
             informations: [
-                {key: 'NIP', value: '1011511511009'},
+                {key: 'NISN', value: '1011511511009'},
                 {key: 'Nama', value: 'Ganjar Hadiatna'},
-                {key: 'Jabatan', value: 'Guru / Pengajar'},
                 {key: 'Alamat', value: 'Lorem ipsum doler ismet'},
+                {key: 'Jenjang', value: 'SMA'},
+                {key: 'Kelas', value: 'Kelas 3.A'},
             ],
             contacts: [
                 {key: 'No. Telpon', value: '089699181669'},
                 {key: 'E-mail', value: 'ganjarhadiatna.gh@gmail.com'},
             ],
         }
+    },
+    components: {
+        AppBreadcrumps 
+    },
+    computed: {
+        idStudent () {
+            return this.$route.params.idStudent
+        },
+        breadcrumps () {
+            return [
+                {title: 'Daftar Murid', active: false},
+                {title: 'Detail', active: false},
+                {title: this.idStudent, active: true},
+            ]
+        }
+    },
+    methods: {
+        goBack () {
+            this.$router.back()
+        },
+        onChangeTabs (data) {
+            this.activeTabs = data
+        },
+        toEdit () {
+            this.$router.push({name: 'teacher-matter-create'})
+        }
     }
 }
 </script>
+<style>
+    .el-select .el-input {
+        width: 110px;
+    }
+    .input-with-select .el-input-group__prepend {
+        background-color: #fff;
+    }
+</style>

@@ -4,9 +4,9 @@
             <div class="fonts fonts-32 semibold black">Profil</div>
             <div class="width width-100 display-flex space-between padding padding-top-30px padding-bottom-15px">
                 <div class="width width-30">
-                    <div class="card bg-white">
+                    <div class="card bg-white box-shadow">
                         <div class="width width-100 padding padding-top-10px">
-                            <div class="display-flex column align-center padding padding-bottom-10px">
+                            <div class="display-flex column align-center">
                                 <div 
                                     class="image image-circle image-150px margin margin-bottom-10px"
                                     :style="`text-align: center; background-image: url(${image});`">
@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <div class="width width-67">
-                    <div class="card bg-white margin margin-bottom-30px">
+                    <div class="card bg-white box-shadow margin margin-bottom-30px">
                         <div class="fonts fonts-16 semibold black">Informasi</div>
                         <div 
                             v-for="(dt, i) in informations" 
@@ -44,7 +44,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card bg-white margin margin-bottom-30px">
+                    <div class="card bg-white box-shadow margin margin-bottom-30px">
                         <div class="fonts fonts-16 semibold black">Kontak</div>
                         <div 
                             v-for="(dt, i) in contacts" 

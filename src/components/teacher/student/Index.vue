@@ -1,10 +1,10 @@
 <template>
     <div id="app">
         <div class="width width-100">
-            <div class="fonts fonts-32 semibold black">Materi Ajar</div>
+            <div class="fonts fonts-32 semibold black">Daftar Murid</div>
             <div class="display-flex space-between align-center padding padding-top-15px padding-bottom-15px">
                 <div class="width width-30 display-flex">
-                    <el-input placeholder="Cari materi ajar" v-model="formFilter.search" class="subject-input-with-select">
+                    <el-input placeholder="Cari murid" v-model="formFilter.search" class="subject-input-with-select">
                         <el-button slot="append" icon="el-icon-search"></el-button>
                     </el-input>
                 </div>
@@ -44,12 +44,6 @@
                             <i class="icn icn-left fa fa-lg fa-filter"></i> Filter
                         </button>
                     </el-popover>
-                    <router-link
-                        :to="{name: 'class-room-matter-create'}" 
-                        class="btn btn-main" 
-                        style="margin-left: 5px;">
-                        <i class="icn icn-left fa fa-lg fa-plus-circle"></i> Upload Materi Ajar
-                    </router-link>
                 </div>
             </div>
             <Card :isGridView.sync="isGridView" :data.sync="data" />
@@ -65,7 +59,7 @@ export default {
     },
     computed: {
         ...mapState({
-            subject: state => state.teacherMatter
+            subject: state => state.teacherStudent
         }),
         formFilter () {
             return this.subject.formFilter
@@ -79,7 +73,7 @@ export default {
     },
     methods: {
         ...mapActions({
-            onChangeGridView: 'teacherMatter/onChangeGridView'
+            onChangeGridView: 'teacherStudent/onChangeGridView'
         }),
         changeGridView () {
             this.onChangeGridView(!this.isGridView)

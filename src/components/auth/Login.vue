@@ -99,7 +99,7 @@ export default {
                         this.$router.push({name: 'admin-home'})
                         break
                     case 'teacher':
-                        this.$router.push({name: 'teacher-home'})
+                        this.$router.push({name: 'class-room-home'})
                         break
                     case 'student':
                         this.$router.push({name: 'student-home'})

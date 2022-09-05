@@ -21,27 +21,9 @@
                         <div class="card-capsule active margin margin-right-15px">
                             <i class="icn fonts fonts-6 green fa fa-lw fa-circle"></i> Active
                         </div>
-                        <el-popover
-                            placement="bottom-end"
-                            width="150"
-                            trigger="click">
-                            <div class="width width-100">
-                                <button class="btn btn-full btn-left btn-white" @click="toViewDetail">
-                                    <i class="icn icn-left fa fa-lg fa-align-left"></i> Detail 
-                                </button>
-                                <button class="btn btn-full btn-left btn-white">
-                                    <i class="icn icn-left fa fa-lg fa-edit"></i> Edit  
-                                </button>
-                                <button class="btn btn-full btn-left btn-white">
-                                    <i class="icn icn-left fa fa-lg fa-trash-alt"></i> Hapus 
-                                </button>
-                            </div>
-                            <button 
-                                slot="reference"
-                                class="btn btn-circle btn-transparent">
-                                <i class="icn fa fa-lg fa-ellipsis-v"></i>
-                            </button>
-                        </el-popover>
+                        <button class="btn btn-circle btn-transparent" @click="toViewDetail">
+                            <i class="icn fa fa-lg fa-arrow-right"></i>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -61,28 +43,10 @@
                             <i class="icn fonts fonts-6 green fa fa-lw fa-circle"></i> Active
                         </div>
                         <router-link
-                            :to="{name: 'class-room-matter-detail', params: {idMatter: 'SB-00000000001'}}" 
+                            :to="{name: 'student-home-matter-detail', params: {id: 'SB-00000000001'}}" 
                             class="btn btn-sekunder btn-full-padding">
                             Lihat Detail
                         </router-link>
-                        <el-popover
-                            placement="bottom-end"
-                            width="150"
-                            trigger="click">
-                            <div class="width width-100">
-                                <button class="btn btn-full btn-left btn-white">
-                                    <i class="icn icn-left fa fa-lg fa-edit"></i> Edit  
-                                </button>
-                                <button class="btn btn-full btn-left btn-white">
-                                    <i class="icn icn-left fa fa-lg fa-trash-alt"></i> Hapus 
-                                </button>
-                            </div>
-                            <button 
-                                slot="reference"
-                                class="btn btn-circle btn-transparent float-top-right">
-                                <i class="icn fa fa-lg fa-ellipsis-v"></i>
-                            </button>
-                        </el-popover>
                     </div>
                 </div>
             </div>
@@ -98,7 +62,7 @@ export default {
     },
     methods: {
         toViewDetail () {
-            this.$router.push({name: 'class-room-matter-detail', params: {idMatter: 'SB-00000000001'}})
+            this.$router.push({name: 'student-home-matter-detail', params: {id: 'SB-00000000001'}})
         }
     }
 }

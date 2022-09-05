@@ -6,7 +6,7 @@
             </div>
             <div class="width width-100 display-flex space-between padding padding-top-30px padding-bottom-15px">
                 <div class="width width-30">
-                    <div class="card bg-white display-flex column align-center">
+                    <div class="card bg-white box-shadow display-flex column align-center">
                         <div class="width width-100 margin margin-top-15px margin-bottom-15px">
                             <div 
                                 class="image image-half-padding bg-size-contain bg-white"
@@ -47,7 +47,7 @@
                     </div>
                 </div>
                 <div class="width width-67">
-                    <div class="card bg-white">
+                    <div class="card bg-white box-shadow">
                         <div class="padding padding-15px">
                             <h1 class="fonts fonts-26 semibold black margin margin-bottom-15px">{{ content.title }}</h1>
                             <div class="fonts fonts-10 normal grey margin margin-bottom-15px">{{ content.date }}</div>
@@ -150,7 +150,7 @@ export default {
             this.activeTabs = data
         },
         toEdit () {
-            this.$router.push({name: 'teacher-matter-create'})
+            this.$router.push({name: 'class-room-matter-create'})
         },
         onCloseDocument (data) {
             this.visibleDocument = !this.visibleDocument

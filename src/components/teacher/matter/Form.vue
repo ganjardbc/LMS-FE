@@ -57,7 +57,7 @@
                             v-if="activeIndex === totalStep" 
                             class="btn btn-main margin margin-left-10px"
                             @click="onSubmit">
-                            Upload Materi 
+                            Upload Materi Ajar 
                         </button>
                     </div>
                 </div>
@@ -152,7 +152,7 @@ export default {
             setTimeout(() => {
                 this.viisbleLoader = false 
                 this.visiblePopup = true 
-            }, 3000);
+            }, 1500);
         },
     },
     computed: {
@@ -162,7 +162,7 @@ export default {
         breadcrumps () {
             return [
                 {title: 'Materi Ajar', active: false},
-                {title: 'Upload Materi Ajar', active: true}
+                {title: 'Buat Baru', active: true}
             ]
         },
         activeIndex () {

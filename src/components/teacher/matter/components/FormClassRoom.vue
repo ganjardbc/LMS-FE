@@ -3,10 +3,30 @@
         <div class="card box-shadow bg-white">
             <div class="padding padding-15px">
                 <div class="fonts fonts-14 semibold black margin margin-bottom-10px">Ruang Kelas</div>
-                <el-input placeholder="Cari ruang kelas" v-model="searchClassRoom" style="width: 100%;">
+                <div v-if="findClassRoom" class="width width-100 padding padding-top-15px">
+                    <div class="card bg-white border-full display-flex align-center">
+                        <div 
+                            class="image image-60px bg-size-contain bg-white margin margin-right-15px"
+                            :style="`background-image: url(${findClassRoom.image});`"
+                            ></div>
+                        <div style="width: calc(100% - 235px);">
+                            <div class="fonts fonts-11 black semibold">{{ findClassRoom.title }}</div>
+                            <div class="fonts fonts-10 grey normal">{{ findClassRoom.description }}</div>
+                            <div class="display-flex flex-left">
+                                <div class="fonts fonts-10 normal grey"><span class="fonts fonts-10 semibold primary">{{ findClassRoom.student }}</span> Murid</div>
+                            </div>
+                        </div>
+                        <div class="width width-160px display-flex flex-end align-center">
+                            <button class="btn btn-primary btn-circle">
+                                <i class="fa fa-lg fa-check-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- <el-input placeholder="Cari ruang kelas" v-model="searchClassRoom" style="width: 100%;">
                     <el-button slot="append" icon="el-icon-search"></el-button>
-                </el-input>
-                <div class="width width-100 padding padding-top-15px">
+                </el-input> -->
+                <!-- <div class="width width-100 padding padding-top-15px">
                     <div 
                         v-if="errorMessage.classRoom" 
                         class="fonts fonts-12px red">{{ errorMessage.classRoom }}</div>                                
@@ -43,7 +63,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -65,7 +85,10 @@ export default {
         }),
         selectedClassRoom () {
             return this.formMatter.classRoom 
-        }
+        },
+        findClassRoom () {
+            return this.dataClassRoom.find((item) => item.id === this.selectedClassRoom)
+        },
     },
     methods: {
         onSelect(value) {

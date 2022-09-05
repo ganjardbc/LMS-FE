@@ -77182,6 +77182,7 @@ a {
   height: 100vh;
   z-index: 100;
   background-color: #fff;
+  box-shadow: 3px 6px 18px #f9f9f9;
 }
 #admin .sidebar .header {
   position: relative;

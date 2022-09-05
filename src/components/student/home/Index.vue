@@ -12,10 +12,10 @@
                         <div class="width width-60">
                             <div class="fonts fonts-32 semibold black">Kelas 3.A</div>
                             <div class="display-flex padding padding-top-10px">
-                                <div class="fonts fonts-11 grey">SMA, Angkatan 2020</div>
-                                <div class="card-capsule active margin margin-left-15px">
+                                <div class="fonts fonts-11 grey">Santi Asromo, SMA</div>
+                                <!-- <div class="card-capsule active margin margin-left-15px">
                                     <i class="icn fonts fonts-6 green fa fa-lw fa-circle"></i> Active
-                                </div>
+                                </div> -->
                             </div>
                             <div class="display-flex padding padding-top-15px">
                                 <router-link 
@@ -29,10 +29,10 @@
                 </div>
             </div>
 
-            <div class="fonts fonts-18 semibold black">Daftar Tugas SMA/SMP</div>
+            <div class="fonts fonts-18 semibold black">Daftar Materi Ajar SMA</div>
             <div class="display-flex space-between align-center padding padding-top-15px padding-bottom-15px">
                 <div class="width width-30 display-flex">
-                    <el-input placeholder="Cari tugas" v-model="formFilter.search" class="subject-input-with-select">
+                    <el-input placeholder="Cari materi ajar" v-model="formFilter.search" class="subject-input-with-select">
                         <el-button slot="append" icon="el-icon-search"></el-button>
                     </el-input>
                 </div>
@@ -92,9 +92,7 @@ export default {
             ],
         }
     },
-    mounted () {
-        console.log('classRoom', this.classRoom)
-    },
+    mounted () {},
     computed: {
         ...mapState({
             metrics: state => state.studentDashboard.metrics,

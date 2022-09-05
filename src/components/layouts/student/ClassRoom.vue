@@ -147,7 +147,7 @@ export default {
                 {id: 3, icon: 'fa fa-lg fa-graduation-cap', title: 'Jumlah Kelas', value: '77'}
             ],
             sidebar: [
-                {icon: 'fa fa-lg fa-shapes', label: 'Kelas Saya', value: 0, link: 'student-dashboard', permission: 'dashboard'},
+                {icon: 'fa fa-lg fa-shapes', label: 'Home', value: 0, link: 'student-dashboard', permission: 'dashboard'},
                 {icon: 'fa fa-lg fa-book-open', label: 'Materi Ajar', value: 0, link: 'student-matter', permission: 'dashboard'},
                 {icon: 'fa fa-lg fa-graduation-cap', label: 'Daftar Murid', value: 0, link: 'student-list', permission: 'dashboard'},
             ]

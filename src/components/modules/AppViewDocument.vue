@@ -1,5 +1,5 @@
 <template>
-    <div id="App" class="display-popup">
+    <div id="App" class="display-popup change-scrollbar">
         <div class="padding padding-top-30px padding-bottom-30px">
             <div class="card box-shadow bg-white width width-900px width-center">
                 <div class="display-flex space-between align-center padding padding-bottom-15px border-bottom">

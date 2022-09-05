@@ -14,6 +14,9 @@ import "./assets/icons/fontawesome/css/all.min.css"
 import AudioPlayer from '@liripeng/vue-audio-player'
 import VueVideoPlayer from 'vue-video-player'
 import 'video.js/dist/video-js.css'
+import VuePdfApp from "vue-pdf-app"
+
+Vue.component("vue-pdf-app", VuePdfApp)
 
 // Vue.use(VCalendar)
 Vue.use(ElementUI)

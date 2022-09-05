@@ -443,6 +443,7 @@ a {
         height: 100vh;
         z-index: 100;
         background-color: #fff;
+        box-shadow: $shadow;
         .header {
             position: relative;
             width: 100%;

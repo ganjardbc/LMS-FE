@@ -11,6 +11,11 @@
                         </div>
                         <div class="width width-60">
                             <div class="fonts fonts-32 semibold black">Kelas 3.A</div>
+                            <div class="display-flex">
+                                <div class="card-capsule active">
+                                    <i class="icn fonts fonts-6 green fa fa-lw fa-circle"></i> Active
+                                </div>
+                            </div>
                             <div class="width width-100 padding padding-top-10px display-flex align-left">
                                 <div class="width width-100">
                                     <div 
@@ -21,19 +26,6 @@
                                         </div>
                                         <div class="width width-100">
                                             <div class="fonts fonts-11 normal black">: {{ dt.value }}</div>
-                                        </div>
-                                    </div>
-                                    <div class="display-flex row align-center center padding padding-bottom-10px">
-                                        <div class="width width-250px align-center">
-                                            <div class="fonts fonts-11 semibold black">Status</div>
-                                        </div>
-                                        <div class="width width-100">
-                                            <div class="display-flex">
-                                                <span class="margin margin-right-5px">:</span>
-                                                <div class="card-capsule active">
-                                                    <i class="icn fonts fonts-6 green fa fa-lw fa-circle"></i> Active
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -106,9 +98,7 @@ export default {
             ],
         }
     },
-    mounted () {
-        console.log('classRoom', this.classRoom)
-    },
+    mounted () {},
     computed: {
         ...mapState({
             metrics: state => state.studentDashboard.metrics,

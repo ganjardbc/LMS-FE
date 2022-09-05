@@ -7,7 +7,7 @@
             <div v-if="!isGridView" class="padding padding-top-15px padding-bottom-15px">
                 <div class="card bg-white box-shadow display-flex align-center">
                     <div 
-                        class="image image-60px bg-size-contain bg-white margin margin-right-15px"
+                        class="image image-60px image-circle bg-size-contain bg-white margin margin-right-15px"
                         :style="`background-image: url(${dt.image});`"
                         ></div>
                     <div style="width: calc(100% - 235px);">
@@ -29,7 +29,7 @@
             <div v-if="isGridView" class="padding padding-15px">
                 <div class="card bg-white box-shadow">
                     <div 
-                        class="image image-padding bg-size-contain bg-white"
+                        class="image image-padding image-circle bg-size-contain bg-white"
                         :style="`background-image: url(${dt.image});`"
                         ></div>
                     <div class="display-flex column align-center padding padding-top-15px">

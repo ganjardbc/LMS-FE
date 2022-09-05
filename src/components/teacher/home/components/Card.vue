@@ -41,7 +41,7 @@
                         <div class="fonts fonts-11 black semibold align-center margin margin-bottom-5px">{{ dt.title }}</div>
                         <div class="fonts fonts-10 black normal margin margin-bottom-10px">{{ dt.description }}</div>
                         <div class="display-flex row center margin margin-bottom-10px">
-                            <div class="fonts fonts-10 normal grey"><span class="fonts fonts-10 semibold primary">{{ dt.subject }}</span> Mapel</div>
+                            <div class="fonts fonts-10 normal grey"><span class="fonts fonts-10 semibold primary">{{ dt.subject }}</span> Materi</div>
                             <div class="fonts fonts-10 normal grey margin margin-left-10px margin-right-10px">|</div>
                             <div class="fonts fonts-10 normal grey"><span class="fonts fonts-10 semibold primary">{{ dt.student }}</span> Murid</div>
                         </div>

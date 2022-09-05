@@ -55,17 +55,17 @@
                                     <div class="fonts fonts-11 semibold black">Kelas 3.A</div>
                                     <div class="fonts fonts-9 normal black">SMA, Angkatan 2020</div>
                                     <div class="display-flex row center margin margin-top-20px" style="width: 100%;">
-                                        <div class="width width-50">
+                                        <div class="width width-33">
                                             <div class="fonts fonts-11 primary semibold align-center">15</div>
                                             <div class="fonts fonts-9 black normal align-center">Materi</div>
                                         </div>
-                                        <div class="width width-50">
-                                            <div class="fonts fonts-11 primary semibold align-center">23</div>
-                                            <div class="fonts fonts-9 black normal align-center">Guru</div>
-                                        </div>
-                                        <div class="width width-50">
+                                        <div class="width width-33">
                                             <div class="fonts fonts-11 primary semibold align-center">20</div>
                                             <div class="fonts fonts-9 black normal align-center">Murid</div>
+                                        </div>
+                                        <div class="width width-33">
+                                            <div class="fonts fonts-11 primary semibold align-center">23</div>
+                                            <div class="fonts fonts-9 black normal align-center">Guru</div>
                                         </div>
                                     </div>
                                 </div>

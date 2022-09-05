@@ -48,7 +48,7 @@
                         :to="{name: 'class-room-matter-create'}" 
                         class="btn btn-main" 
                         style="margin-left: 5px;">
-                        <i class="icn icn-left fa fa-lg fa-plus-circle"></i> Upload Tugas
+                        <i class="icn icn-left fa fa-lg fa-plus-circle"></i> Upload Materi Ajar
                     </router-link>
                 </div>
             </div>

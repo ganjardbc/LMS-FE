@@ -57,7 +57,7 @@
                             v-if="activeIndex === totalStep" 
                             class="btn btn-main margin margin-left-10px"
                             @click="onSubmit">
-                            Upload Tugas 
+                            Upload Materi Ajar 
                         </button>
                     </div>
                 </div>
@@ -66,14 +66,14 @@
 
         <AppConfirmed 
             v-if="visibleAnswer"
-            title="Upload Tugas ?"
+            title="Upload Materi Ajar ?"
             @onClickNo="onClickNo"
             @onClickYes="onClickYes"
         />
 
         <AppAlert 
             v-if="visiblePopup"
-            title="Tugas Berhasil Di-upload !"
+            title="Materi Ajar Berhasil Di-upload !"
             @onClickOk="onClickOk"
         />
 
@@ -152,7 +152,7 @@ export default {
             setTimeout(() => {
                 this.viisbleLoader = false 
                 this.visiblePopup = true 
-            }, 3000);
+            }, 1500);
         },
     },
     computed: {
@@ -161,7 +161,7 @@ export default {
         }),
         breadcrumps () {
             return [
-                {title: 'Tugas', active: false},
+                {title: 'Materi Ajar', active: false},
                 {title: 'Buat Baru', active: true}
             ]
         },

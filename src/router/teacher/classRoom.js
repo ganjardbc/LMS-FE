@@ -8,7 +8,7 @@ import Student from '@/components/teacher/student/Index.vue'
 import StudentDetail from '@/components/teacher/student/Detail.vue'
 
 const routes = {
-    path: '/class-room/:id/',
+    path: '/teacher/class-room/:id/',
     component: ClassRoomLayout,
     children: [
         {

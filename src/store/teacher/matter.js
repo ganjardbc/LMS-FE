@@ -52,7 +52,7 @@ export default {
             title: '',
             description: '',
             schedule: '',
-            classRoom: '',
+            classRoom: 1,
             subject: '',
             contents: [ defaultFormContent ],
         },

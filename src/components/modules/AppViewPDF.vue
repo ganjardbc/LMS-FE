@@ -25,7 +25,8 @@ export default {
         return {
             src: undefined,
 			numPages: undefined,
-            filePdf: '/static/pdf/sample.pdf',
+            // filePdf: '/static/pdf/sample.pdf',
+            filePdf: 'https://ganjardbc.github.io/LMS-FE/static/pdf/sample.pdf',
             currentPage: 0,
 			pageCount: 0,
         }

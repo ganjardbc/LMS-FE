@@ -6,7 +6,7 @@
                 <div class="width width-30">
                     <div class="card bg-white box-shadow">
                         <div class="width width-100 padding padding-top-10px">
-                            <div class="display-flex column align-center padding padding-bottom-10px">
+                            <div class="display-flex column align-center">
                                 <div 
                                     class="image image-circle image-150px margin margin-bottom-10px"
                                     :style="`text-align: center; background-image: url(${image});`">

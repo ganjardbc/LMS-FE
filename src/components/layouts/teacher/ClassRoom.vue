@@ -97,7 +97,7 @@
                             width="250"
                             trigger="click">
                             <div class="width width-100 padding padding-top-10px">
-                                <div class="display-flex column align-center padding padding-bottom-10px">
+                                <div class="display-flex column align-center">
                                     <div 
                                         class="image image-circle image-80px margin margin-bottom-10px"
                                         style="text-align: center;">
@@ -108,20 +108,6 @@
                                     </div>
                                     <div class="fonts fonts-11 semibold black">Ganjar Hadiatna</div>
                                     <div class="fonts fonts-9 normal black">Guru / Pengajar</div>
-                                    <div class="display-flex row center margin margin-top-20px" style="width: 100%;">
-                                        <div class="width width-50">
-                                            <div class="fonts fonts-11 primary semibold align-center">15</div>
-                                            <div class="fonts fonts-9 black normal align-center">Kelas</div>
-                                        </div>
-                                        <div class="width width-50">
-                                            <div class="fonts fonts-11 primary semibold align-center">23</div>
-                                            <div class="fonts fonts-9 black normal align-center">Mapel</div>
-                                        </div>
-                                        <div class="width width-50">
-                                            <div class="fonts fonts-11 primary semibold align-center">77</div>
-                                            <div class="fonts fonts-9 black normal align-center">Murid</div>
-                                        </div>
-                                    </div>
                                 </div>
                                 <div class="margin margin-bottom-15px padding padding-top-15px border-bottom"></div>
                                 <button class="btn btn-white btn-full btn-center" @click="logOut">

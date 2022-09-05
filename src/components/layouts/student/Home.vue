@@ -4,7 +4,7 @@
             <div id="header-container">
                 <div id="header-main" class="display-flex space-between align-center">
                     <div class="width width-120px display-flex center align-center">
-                        <router-link :to="{name: 'class-room-home'}" class="logo">
+                        <router-link :to="{name: 'student-home'}" class="logo">
                             <img :src="logo" alt="" style="width: 100%;">
                         </router-link>
                     </div>
@@ -24,19 +24,19 @@
                                             style="color: #999;" />
                                     </div>
                                     <div class="fonts fonts-11 semibold black">Ganjar Hadiatna</div>
-                                    <div class="fonts fonts-9 normal black">Guru / Pengajar</div>
+                                    <div class="fonts fonts-9 normal black">Siswa / Murid</div>
                                     <div class="display-flex row center margin margin-top-20px width width-100">
                                         <div class="width width-50">
                                             <div class="fonts fonts-11 primary semibold align-center">15</div>
-                                            <div class="fonts fonts-9 black normal align-center">Kelas</div>
+                                            <div class="fonts fonts-9 black normal align-center">Tugas</div>
                                         </div>
                                         <div class="width width-50">
                                             <div class="fonts fonts-11 primary semibold align-center">23</div>
-                                            <div class="fonts fonts-9 black normal align-center">Mapel</div>
+                                            <div class="fonts fonts-9 black normal align-center">Murid</div>
                                         </div>
                                         <div class="width width-50">
                                             <div class="fonts fonts-11 primary semibold align-center">77</div>
-                                            <div class="fonts fonts-9 black normal align-center">Murid</div>
+                                            <div class="fonts fonts-9 black normal align-center">Guru</div>
                                         </div>
                                     </div>
                                 </div>
@@ -51,6 +51,12 @@
                                 <i class="icn icn-left far fa-lg fa-user"></i> Ganjar Hadiatna  
                             </button>
                         </el-popover>
+
+                        <router-link 
+                            :to="{name: 'student-dashboard'}" 
+                            class="btn btn-main margin margin-left-10px">
+                            <i class="icn icn-left fa fa-lg fa-chalkboard-teacher"></i> Masuk ke Kelas
+                        </router-link>
                     </div>
                 </div>
             </div>
@@ -63,8 +69,8 @@
     </div>
 </template>
 <script>
-import Logo from '../../assets/img/sample-logo.png'
-import AppListMenu from '../modules/AppListMenu'
+import Logo from '../../../assets/img/sample-logo.png'
+import AppListMenu from '../../modules/AppListMenu'
 export default {
     name: 'app',
     data () {

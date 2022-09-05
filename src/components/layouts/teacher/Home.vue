@@ -4,7 +4,7 @@
             <div id="header-container">
                 <div id="header-main" class="display-flex space-between align-center">
                     <div class="width width-120px display-flex center align-center">
-                        <router-link :to="{name: 'teacher-home'}" class="logo">
+                        <router-link :to="{name: 'class-room-home'}" class="logo">
                             <img :src="logo" alt="" style="width: 100%;">
                         </router-link>
                     </div>
@@ -41,7 +41,7 @@
                                     </div>
                                 </div>
                                 <div class="margin margin-bottom-15px padding padding-top-15px border-bottom"></div>
-                                <button class="btn btn-white btn-full btn-center">
+                                <button class="btn btn-white btn-full btn-center" @click="logOut">
                                     <i class="fonts red icn icn-left fa fa-lg fa-power-off"></i> Logout
                                 </button>
                             </div>
@@ -63,8 +63,8 @@
     </div>
 </template>
 <script>
-import Logo from '../../assets/img/sample-logo.png'
-import AppListMenu from '../modules/AppListMenu'
+import Logo from '../../../assets/img/sample-logo.png'
+import AppListMenu from '../../modules/AppListMenu'
 export default {
     name: 'app',
     data () {
@@ -74,21 +74,15 @@ export default {
             search: '',
             visiblePopup: false,
             showBar: true,
-            metrics: [
-                {id: 2, icon: 'fa fa-lg fa-book-open', title: 'Jumlah Materi', value: '23'},
-                {id: 3, icon: 'fa fa-lg fa-graduation-cap', title: 'Jumlah Kelas', value: '77'}
-            ],
-            sidebar: [
-                {icon: 'fa fa-lg fa-shapes', label: 'Dashboard', value: 0, link: 'teacher-home', permission: 'dashboard'},
-                {icon: 'fa fa-lg fa-book-open', label: 'Materi Ajar', value: 0, link: 'teacher-matter', permission: 'dashboard'},
-                {icon: 'fa fa-lg fa-chalkboard-teacher', label: 'Ruang Kelas', value: 0, link: 'teacher-class', permission: 'dashboard'},
-                // {icon: 'fa fa-lg fa-graduation-cap', label: 'Daftar Murid', value: 0, link: 'login', permission: 'dashboard'},
-                // {icon: 'fa fa-lg fa-comments', label: 'Notifikasi', value: 0, link: 'login', permission: 'dashboard'},
-            ]
         }
     },
     components: {
         AppListMenu
+    },
+    methods: {
+        logOut () {
+            this.$router.push('/')
+        }
     }
 }
 </script>

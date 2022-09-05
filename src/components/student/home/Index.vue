@@ -1,10 +1,38 @@
 <template>
     <div id="app">
         <div class="width width-100">
-            <div class="fonts fonts-32 semibold black">Materi Ajar</div>
+            <div class="padding padding-bottom-15px">
+                <div class="width width-100 padding padding-bottom-30px padding-top-30px">
+                    <div class="width width-100 display-flex row-reverse align-center">
+                        <div class="width width-40">
+                            <div 
+                                class="image image-half-padding bg-size-cover bg-white"
+                                :style="`background-image: url(${cover});`"></div>
+                        </div>
+                        <div class="width width-60">
+                            <div class="fonts fonts-32 semibold black">Kelas 3.A</div>
+                            <div class="display-flex padding padding-top-10px">
+                                <div class="fonts fonts-11 grey">SMA, Angkatan 2020</div>
+                                <div class="card-capsule active margin margin-left-15px">
+                                    <i class="icn fonts fonts-6 green fa fa-lw fa-circle"></i> Active
+                                </div>
+                            </div>
+                            <div class="display-flex padding padding-top-15px">
+                                <router-link 
+                                    :to="{name: 'student-dashboard'}" 
+                                    class="btn btn-main">
+                                    <i class="icn icn-left fa fa-lg fa-chalkboard-teacher"></i> Masuk ke Kelas
+                                </router-link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fonts fonts-18 semibold black">Daftar Tugas SMA/SMP</div>
             <div class="display-flex space-between align-center padding padding-top-15px padding-bottom-15px">
                 <div class="width width-30 display-flex">
-                    <el-input placeholder="Cari materi ajar" v-model="formFilter.search" class="subject-input-with-select">
+                    <el-input placeholder="Cari tugas" v-model="formFilter.search" class="subject-input-with-select">
                         <el-button slot="append" icon="el-icon-search"></el-button>
                     </el-input>
                 </div>
@@ -52,23 +80,36 @@
 </template>
 <script>
 import { mapState, mapActions } from 'vuex'
+import classRoomImage from '../../../assets/img/classroom-3.jpeg'
 import Card from './components/Card'
+
 export default {
     data () {
-        return {}
+        return {
+            cover: classRoomImage,
+            info: [
+                {icon: 'fa fa-lg fa-user', key: 'Wali', value: 'Ganjar Hadiatna'},
+            ],
+        }
+    },
+    mounted () {
+        console.log('classRoom', this.classRoom)
     },
     computed: {
         ...mapState({
-            subject: state => state.studentMatter
+            metrics: state => state.studentDashboard.metrics,
+            subjects: state => state.studentDashboard.subjects,
+            classRooms: state => state.studentDashboard.classRooms,
+            matter: state => state.studentMatter
         }),
         formFilter () {
-            return this.subject.formFilter
+            return this.matter.formFilter
         },
         isGridView () {
-            return this.subject.isGridView
+            return this.matter.isGridView
         },
         data () {
-            return this.subject.data 
+            return this.matter.data 
         }
     },
     methods: {
@@ -78,20 +119,9 @@ export default {
         changeGridView () {
             this.onChangeGridView(!this.isGridView)
         },
-        toCreateForm () {
-            this.$router.push({name: 'teacher-matter-create'})
-        }
     },
     components: {
         Card
     }
 }
 </script>
-<style>
-    .subject-input-with-select .el-select .el-input {
-        width: 150px;
-    }
-    .subject-input-with-select .el-input-group__prepend {
-        background-color: #fff;
-    }
-</style>

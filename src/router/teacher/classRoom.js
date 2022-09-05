@@ -1,11 +1,11 @@
-import ClassRoomLayout from '@/components/layouts/ClassRoom.vue'
-import Dashboard from '@/components/classRoom/dashboard/Index.vue'
-import Profile from '@/components/classRoom/profile/Index.vue'
-import Matter from '@/components/classRoom/matter/Index.vue'
-import MatterCreate from '@/components/classRoom/matter/Form.vue'
-import MatterDetail from '@/components/classRoom/matter/Detail.vue'
-import Student from '@/components/classRoom/student/Index.vue'
-import StudentDetail from '@/components/classRoom/student/Detail.vue'
+import ClassRoomLayout from '@/components/layouts/teacher/ClassRoom.vue'
+import Dashboard from '@/components/teacher/dashboard/Index.vue'
+import Profile from '@/components/teacher/profile/Index.vue'
+import Matter from '@/components/teacher/matter/Index.vue'
+import MatterCreate from '@/components/teacher/matter/Form.vue'
+import MatterDetail from '@/components/teacher/matter/Detail.vue'
+import Student from '@/components/teacher/student/Index.vue'
+import StudentDetail from '@/components/teacher/student/Detail.vue'
 
 const routes = {
     path: '/class-room/:id/',

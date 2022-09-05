@@ -146,8 +146,8 @@
     </div>
 </template>
 <script>
-import Logo from '../../assets/img/sample-logo.png'
-import AppListMenu from '../modules/AppListMenu'
+import Logo from '../../../assets/img/sample-logo.png'
+import AppListMenu from '../../modules/AppListMenu'
 export default {
     data () {
         return {

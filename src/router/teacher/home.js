@@ -1,9 +1,9 @@
-import ClassListLayout from '@/components/layouts/ClassList.vue'
-import ClassRoom from '@/components/classRoom/Index.vue'
+import HomeLayout from '@/components/layouts/teacher/Home.vue'
+import ClassRoom from '@/components/teacher/home/Index.vue'
 
 const routes = {
     path: '/class-room',
-    component: ClassListLayout,
+    component: HomeLayout,
     children: [
         {
             name: 'class-room-home',

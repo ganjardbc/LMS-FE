@@ -76735,7 +76735,7 @@ table thead, table tbody tr {
 html, body {
   height: 100%;
   -webkit-text-size-adjust: 100%;
-  background-color: #f9f9f9;
+  background-color: #fff;
 }
 
 a {

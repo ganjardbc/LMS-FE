@@ -1,10 +1,10 @@
 <template>
     <div id="app">
         <div class="width width-100">
-            <div class="fonts fonts-32 semibold black">Daftar Kelas</div>
+            <div class="fonts fonts-32 semibold black">Materi Ajar</div>
             <div class="display-flex space-between align-center padding padding-top-15px padding-bottom-15px">
                 <div class="width width-30 display-flex">
-                    <el-input placeholder="Cari kelas" v-model="formFilter.search" class="classroom-input-with-select">
+                    <el-input placeholder="Cari materi ajar" v-model="formFilter.search" class="subject-input-with-select">
                         <el-button slot="append" icon="el-icon-search"></el-button>
                     </el-input>
                 </div>
@@ -44,79 +44,60 @@
                             <i class="icn icn-left fa fa-lg fa-filter"></i> Filter
                         </button>
                     </el-popover>
+                    <router-link
+                        :to="{name: 'class-room-matter-create'}" 
+                        class="btn btn-main" 
+                        style="margin-left: 5px;">
+                        <i class="icn icn-left fa fa-lg fa-plus-circle"></i> Upload Tugas
+                    </router-link>
                 </div>
             </div>
-            <AppTabs 
-                :isScrollable="false"
-                :selectedIndex.sync="activeTabs" 
-                :data="tabs" 
-                :onChange="(data) => onChangeTabs(data)" 
-                class="width width-300px margin margin-bottom-15-px" />
-            <div v-if="activeTabs === 0">
-                <Card :isGridView.sync="isGridView" :data.sync="dataSMA" />
-            </div>
-            <div v-if="activeTabs === 1">
-                <Card :isGridView.sync="isGridView" :data.sync="dataSMP" />
-            </div>
+            <Card :isGridView.sync="isGridView" :data.sync="data" />
         </div>
     </div>
 </template>
 <script>
 import { mapState, mapActions } from 'vuex'
-import Card from './components/CardClassRoom'
-import AppTabs from '../modules/AppTabs'
+import Card from './components/Card'
 export default {
     data () {
-        return {
-            activeTabs: 0,
-            tabs: [
-                {label: 'SMA', status: 'active'},
-                {label: 'SMP', status: ''}
-            ],
-        }
+        return {}
     },
     computed: {
         ...mapState({
-            classRoom: state => state.teacherClassRoom
+            subject: state => state.teacherMatter
         }),
         formFilter () {
-            return this.classRoom.formFilter
+            return this.subject.formFilter
         },
         isGridView () {
-            return this.classRoom.isGridView
+            return this.subject.isGridView
         },
         data () {
-            return this.classRoom.data 
-        },
-        dataSMA () {
-            return this.classRoom.data.filter((e) => e.type === 'SMA')
-        },
-        dataSMP () {
-            return this.classRoom.data.filter((e) => e.type === 'SMP')
+            return this.subject.data 
         }
     },
     methods: {
         ...mapActions({
-            onChangeGridView: 'teacherClassRoom/onChangeGridView'
+            onChangeGridView: 'teacherMatter/onChangeGridView'
         }),
         changeGridView () {
             this.onChangeGridView(!this.isGridView)
         },
-        onChangeTabs (data) {
-            this.activeTabs = data
-        },
+        toCreateForm () {
+            this.$router.push({name: 'class-room-matter-create'})
+        }
     },
     components: {
-        AppTabs,
         Card
     }
 }
 </script>
 <style>
-    .classroom-input-with-select .el-select .el-input {
+    .subject-input-with-select .el-select .el-input {
         width: 150px;
     }
-    .classroom-input-with-select .el-input-group__prepend {
+    .subject-input-with-select .el-input-group__prepend {
         background-color: #fff;
     }
 </style>

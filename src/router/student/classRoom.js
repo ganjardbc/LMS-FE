@@ -1,5 +1,5 @@
-import StudentLayout from '@/components/layouts/Student.vue'
-import Home from '@/components/student/Index.vue'
+import ClassRoomLayout from '@/components/layouts/student/ClassRoom.vue'
+import Dashboard from '@/components/student/dashboard/Index.vue'
 import Profile from '@/components/student/profile/Index.vue'
 import Matter from '@/components/student/matter/Index.vue'
 import MatterDetail from '@/components/student/matter/Detail.vue'
@@ -7,13 +7,13 @@ import Student from '@/components/student/student/Index.vue'
 import StudentDetail from '@/components/student/student/Detail.vue'
 
 const routes = {
-    path: '/student',
-    component: StudentLayout,
+    path: '/student/class-room/',
+    component: ClassRoomLayout,
     children: [
         {
-            name: 'student-home',
+            name: 'student-dashboard',
             path: 'dashboard',
-            component: Home
+            component: Dashboard
         },
         {
             name: 'student-profile',
